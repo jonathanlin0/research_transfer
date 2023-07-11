@@ -31,7 +31,7 @@ class ak_dataset(Dataset):
 
         return image
 
-def get_data(batch_size = 100, num_workers = 12):
+def get_data(batch_size = 100, num_workers = 8):
     cwd = "/home/jonathan/Desktop/Perona_Research"
 
     train_dataset = ak_dataset(

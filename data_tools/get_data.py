@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 from tqdm.auto import tqdm
 import os
 
-def get_data(batch_size=1000, num_workers=12):
+def get_data(batch_size=1000, num_workers=8):
     """
     prepares the training and validation sets and the data loaders
     """

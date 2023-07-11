@@ -6,3 +6,7 @@ wandb
 tqdm
 requests
 pandas
+scikit-learn
+matplotlib
+pytorch-lightning
+lightning
