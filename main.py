@@ -69,7 +69,13 @@ if __name__ == '__main__':
         help='set the batch size',
         choices=['64','128', '256', '512', '1024', '2048']
     )
+    parser.add_argument(
+        '-c', '--num_classes', default='10',
+        help='set the number of classes'
+    )
     args = vars(parser.parse_args())
+
+    assert(args["num_classes"].isdigit())
 
     learning_rate = float(args["learning_rate"])
     num_blocks = int(args["blocks"])
@@ -78,6 +84,8 @@ if __name__ == '__main__':
     print(f"[INFO]: Set the dropout to {dropout}")
     batch_size = int(args["batch_size"])
     print(f"[INFO]: Set the batch size to {batch_size}")
+    num_classes = int(args["num_classes"])
+    print(f"[INFO]: Set the number of classes to {num_classes}")
     if args["activation"] == "relu":
         print("[INFO]: Set activation to ReLU")
         activation = nn.ReLU(inplace=True)
@@ -106,9 +114,9 @@ if __name__ == '__main__':
                     num_blocks = num_blocks,
                     activation = activation,
                     lr = learning_rate,
-                    dropout=dropout,
-                    num_classes=10,
-                    track_wandb=track_wandb)
+                    dropout = dropout,
+                    num_classes = num_classes,
+                    track_wandb = track_wandb)
 
     epochs = 100
     loss_fn = nn.CrossEntropyLoss()

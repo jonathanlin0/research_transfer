@@ -112,16 +112,6 @@ class berlin(pl.LightningModule):
         self.activation = activation
         self.maxpool = nn.MaxPool2d(kernel_size=3, stride=2, padding=1)
         
-        # set device
-        # self.device = "cpu"
-        # if torch.cuda.is_available():
-        #     self.device = "cuda"
-        # if torch.backends.mps.is_available():
-        #     self.device = "mps"
-        
-        # self.device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
-        print(f"--------{(self.device)} is being used--------")
-        
         layers = []
         current_in = 64
         # create number of blocks according to the num_blocks input
