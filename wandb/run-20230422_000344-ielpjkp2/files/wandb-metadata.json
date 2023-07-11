@@ -1,0 +1,45 @@
+{
+    "os": "macOS-10.16-x86_64-i386-64bit",
+    "python": "3.9.6",
+    "heartbeatAt": "2023-04-22T07:03:45.280206",
+    "startedAt": "2023-04-22T07:03:44.961151",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--model",
+        "scratch"
+    ],
+    "state": "running",
+    "program": "/Users/jonathanlinn/Documents/GitHub/Caltech/Perona_Lab_Research/TEMP/train_wandb.py",
+    "codePath": "Perona_Lab_Research/TEMP/train_wandb.py",
+    "git": {
+        "remote": "https://github.com/jonathanlin0/Caltech.git",
+        "commit": "06e6c5a1b160abc1d127bf7b976c28d0247b93f1"
+    },
+    "email": "67934523+jonathanlin0@users.noreply.github.com",
+    "root": "/Users/jonathanlinn/Documents/GitHub/Caltech",
+    "host": "dhcp-171-116.caltech.edu",
+    "username": "jonathanlinn",
+    "executable": "/Library/Frameworks/Python.framework/Versions/3.9/bin/python3",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 2600,
+        "min": 2600,
+        "max": 2600
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2600,
+            "min": 2600,
+            "max": 2600
+        }
+    ],
+    "disk": {
+        "total": 426.54573822021484,
+        "used": 8.451980590820312
+    },
+    "memory": {
+        "total": 16.0
+    }
+}

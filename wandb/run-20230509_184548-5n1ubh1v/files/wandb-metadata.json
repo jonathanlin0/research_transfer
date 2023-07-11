@@ -1,0 +1,102 @@
+{
+    "os": "Linux-5.15.0-60-generic-x86_64-with-glibc2.31",
+    "python": "3.10.2",
+    "heartbeatAt": "2023-05-10T01:45:49.199773",
+    "startedAt": "2023-05-10T01:45:48.739072",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--wandb",
+        "true"
+    ],
+    "state": "running",
+    "program": "/home/jonathan/Downloads/Research/p_lightning.py",
+    "codePath": "p_lightning.py",
+    "host": "peronalab-student",
+    "username": "jonathan",
+    "executable": "/home/jonathan/anaconda3/envs/jonathan/bin/python",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 1458.9896666666666,
+        "min": 1200.0,
+        "max": 3600.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1300.0,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 1400.0,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 1214.949,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 3600.0
+        },
+        {
+            "current": 1200.0,
+            "min": 1200.0,
+            "max": 3600.0
+        }
+    ],
+    "disk": {
+        "total": 1832.2072448730469,
+        "used": 746.0648994445801
+    },
+    "gpu": "NVIDIA GeForce GTX 980",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 980",
+            "memory_total": 4294967296
+        }
+    ],
+    "memory": {
+        "total": 31.253097534179688
+    }
+}

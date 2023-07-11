@@ -1,0 +1,8 @@
+torch
+torchvision
+torchaudio
+pytorch-lightning
+wandb
+tqdm
+requests
+pandas

@@ -1,0 +1,27 @@
+[INFO]: Epoch 1 of 5
+Training
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  7%|█████▌                                                                             | 52/782 [00:30<07:06,  1.71it/s]
+Traceback (most recent call last):
+  File "/Users/jonathanlinn/Documents/GitHub/Caltech/Perona_Lab_Research/TEMP/train_wandb.py", line 83, in <module>
+    train_epoch_loss, train_epoch_acc = train(
+  File "/Users/jonathanlinn/Documents/GitHub/Caltech/Perona_Lab_Research/TEMP/training_utils.py", line 29, in train
+    loss.backward()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/torch/_tensor.py", line 487, in backward
+    torch.autograd.backward(
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/torch/autograd/__init__.py", line 200, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

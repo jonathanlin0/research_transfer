@@ -1,0 +1,310 @@
+2023-04-22 00:56:00,070 INFO    StreamThr :2310435 [internal.py:wandb_internal():86] W&B internal server running at pid: 2310435, started at: 2023-04-22 00:56:00.070143
+2023-04-22 00:56:00,072 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status
+2023-04-22 00:56:00,073 INFO    WriterThread:2310435 [datastore.py:open_for_write():85] open: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/run-tbso2x89.wandb
+2023-04-22 00:56:00,076 DEBUG   SenderThread:2310435 [sender.py:send():375] send: header
+2023-04-22 00:56:00,076 DEBUG   SenderThread:2310435 [sender.py:send():375] send: run
+2023-04-22 00:56:00,324 INFO    SenderThread:2310435 [dir_watcher.py:__init__():219] watching files in: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files
+2023-04-22 00:56:00,324 INFO    SenderThread:2310435 [sender.py:_start_run_threads():1124] run started: tbso2x89 with start time 1682150160.067986
+2023-04-22 00:56:00,324 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: summary_record
+2023-04-22 00:56:00,324 INFO    SenderThread:2310435 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-22 00:56:00,326 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: check_version
+2023-04-22 00:56:00,327 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: check_version
+2023-04-22 00:56:00,399 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: run_start
+2023-04-22 00:56:00,411 DEBUG   HandlerThread:2310435 [system_info.py:__init__():31] System info init
+2023-04-22 00:56:00,411 DEBUG   HandlerThread:2310435 [system_info.py:__init__():46] System info init done
+2023-04-22 00:56:00,411 INFO    HandlerThread:2310435 [system_monitor.py:start():181] Starting system monitor
+2023-04-22 00:56:00,411 INFO    SystemMonitor:2310435 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-04-22 00:56:00,411 INFO    HandlerThread:2310435 [system_monitor.py:probe():201] Collecting system info
+2023-04-22 00:56:00,412 INFO    SystemMonitor:2310435 [interfaces.py:start():190] Started cpu monitoring
+2023-04-22 00:56:00,413 INFO    SystemMonitor:2310435 [interfaces.py:start():190] Started disk monitoring
+2023-04-22 00:56:00,414 INFO    SystemMonitor:2310435 [interfaces.py:start():190] Started gpu monitoring
+2023-04-22 00:56:00,415 INFO    SystemMonitor:2310435 [interfaces.py:start():190] Started memory monitoring
+2023-04-22 00:56:00,416 INFO    SystemMonitor:2310435 [interfaces.py:start():190] Started network monitoring
+2023-04-22 00:56:00,463 DEBUG   HandlerThread:2310435 [system_info.py:probe():195] Probing system
+2023-04-22 00:56:00,465 DEBUG   HandlerThread:2310435 [git.py:repo():40] git repository is invalid
+2023-04-22 00:56:00,465 DEBUG   HandlerThread:2310435 [system_info.py:probe():240] Probing system done
+2023-04-22 00:56:00,465 DEBUG   HandlerThread:2310435 [system_monitor.py:probe():210] {'os': 'Linux-5.15.0-60-generic-x86_64-with-glibc2.31', 'python': '3.10.2', 'heartbeatAt': '2023-04-22T07:56:00.463650', 'startedAt': '2023-04-22T07:56:00.059737', 'docker': None, 'cuda': None, 'args': ('--model', 'scratch'), 'state': 'running', 'program': '/home/jonathan/Downloads/Research/train_wandb.py', 'codePath': 'train_wandb.py', 'host': 'peronalab-student', 'username': 'jonathan', 'executable': '/home/jonathan/anaconda3/envs/jonathan/bin/python3', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 2049.8475, 'min': 1200.0, 'max': 3600.0}, 'cpu_freq_per_core': [{'current': 3298.168, 'min': 1200.0, 'max': 3600.0}, {'current': 1300.0, 'min': 1200.0, 'max': 3600.0}, {'current': 1346.901, 'min': 1200.0, 'max': 3600.0}, {'current': 3438.238, 'min': 1200.0, 'max': 3600.0}, {'current': 1200.0, 'min': 1200.0, 'max': 3600.0}, {'current': 1700.0, 'min': 1200.0, 'max': 3600.0}, {'current': 1200.0, 'min': 1200.0, 'max': 3600.0}, {'current': 1500.0, 'min': 1200.0, 'max': 3600.0}, {'current': 1300.0, 'min': 1200.0, 'max': 3600.0}, {'current': 2436.29, 'min': 1200.0, 'max': 3600.0}, {'current': 1600.0, 'min': 1200.0, 'max': 3600.0}, {'current': 1200.0, 'min': 1200.0, 'max': 3600.0}], 'disk': {'total': 1832.2072448730469, 'used': 742.4519920349121}, 'gpu': 'NVIDIA GeForce GTX 980', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 980', 'memory_total': 4294967296}], 'memory': {'total': 31.253097534179688}}
+2023-04-22 00:56:00,465 INFO    HandlerThread:2310435 [system_monitor.py:probe():211] Finished collecting system info
+2023-04-22 00:56:00,465 INFO    HandlerThread:2310435 [system_monitor.py:probe():214] Publishing system info
+2023-04-22 00:56:00,465 DEBUG   HandlerThread:2310435 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2023-04-22 00:56:00,466 DEBUG   HandlerThread:2310435 [system_info.py:_save_pip():67] Saving pip packages done
+2023-04-22 00:56:00,466 DEBUG   HandlerThread:2310435 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2023-04-22 00:56:01,327 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_created():278] file/dir created: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/conda-environment.yaml
+2023-04-22 00:56:01,328 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_created():278] file/dir created: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/requirements.txt
+2023-04-22 00:56:01,328 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_created():278] file/dir created: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/wandb-summary.json
+2023-04-22 00:56:03,858 DEBUG   HandlerThread:2310435 [system_info.py:_save_conda():86] Saving conda packages done
+2023-04-22 00:56:03,859 INFO    HandlerThread:2310435 [system_monitor.py:probe():216] Finished publishing system info
+2023-04-22 00:56:03,868 DEBUG   SenderThread:2310435 [sender.py:send():375] send: files
+2023-04-22 00:56:03,868 INFO    SenderThread:2310435 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-04-22 00:56:03,876 DEBUG   SenderThread:2310435 [sender.py:send():375] send: telemetry
+2023-04-22 00:56:03,877 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-22 00:56:03,878 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: stop_status
+2023-04-22 00:56:04,328 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/conda-environment.yaml
+2023-04-22 00:56:04,329 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_created():278] file/dir created: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:04,329 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_created():278] file/dir created: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/wandb-metadata.json
+2023-04-22 00:56:04,339 INFO    wandb-upload_0:2310435 [upload_job.py:push():137] Uploaded file /tmp/tmppoy823q8wandb/pxj704r6-wandb-metadata.json
+2023-04-22 00:56:05,705 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:56:06,329 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:08,330 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:10,331 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:10,822 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:56:12,332 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:14,333 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:15,884 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:56:16,333 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:18,334 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:18,874 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-22 00:56:18,875 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: stop_status
+2023-04-22 00:56:20,335 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:20,931 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:56:22,336 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:24,337 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:26,003 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:56:26,338 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:28,339 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:30,340 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:31,020 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:56:31,341 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/config.yaml
+2023-04-22 00:56:31,533 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-22 00:56:31,538 DEBUG   SenderThread:2310435 [sender.py:send():375] send: history
+2023-04-22 00:56:31,538 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: summary_record
+2023-04-22 00:56:31,539 INFO    SenderThread:2310435 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-22 00:56:32,341 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:32,342 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/wandb-summary.json
+2023-04-22 00:56:33,875 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-22 00:56:33,876 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: stop_status
+2023-04-22 00:56:34,342 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:36,214 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:56:36,343 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:38,344 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:40,345 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:41,280 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:56:42,346 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:44,347 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:46,321 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:56:46,348 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:48,349 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:48,877 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-22 00:56:48,877 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: stop_status
+2023-04-22 00:56:50,349 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:51,355 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:56:52,350 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:54,351 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:56,352 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:56:56,367 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:56:56,685 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-22 00:56:56,689 DEBUG   SenderThread:2310435 [sender.py:send():375] send: history
+2023-04-22 00:56:56,689 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: summary_record
+2023-04-22 00:56:56,691 INFO    SenderThread:2310435 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-22 00:56:57,353 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/wandb-summary.json
+2023-04-22 00:56:58,353 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:00,354 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:00,416 DEBUG   SystemMonitor:2310435 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-04-22 00:57:00,417 DEBUG   SenderThread:2310435 [sender.py:send():375] send: stats
+2023-04-22 00:57:01,430 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:57:02,359 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:03,875 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-22 00:57:03,876 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: stop_status
+2023-04-22 00:57:04,360 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:06,361 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:06,479 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:57:08,362 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:10,363 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:11,575 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:57:12,363 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:14,364 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:16,365 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:16,687 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:57:18,366 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:18,876 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-22 00:57:18,877 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: stop_status
+2023-04-22 00:57:20,367 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:21,701 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:57:22,367 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:22,378 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-22 00:57:22,380 DEBUG   SenderThread:2310435 [sender.py:send():375] send: history
+2023-04-22 00:57:22,382 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: summary_record
+2023-04-22 00:57:22,383 INFO    SenderThread:2310435 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-22 00:57:23,368 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/wandb-summary.json
+2023-04-22 00:57:24,368 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:26,370 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:26,775 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:57:28,371 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:30,372 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:30,419 DEBUG   SenderThread:2310435 [sender.py:send():375] send: stats
+2023-04-22 00:57:31,846 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:57:32,373 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:33,876 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-22 00:57:33,877 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: stop_status
+2023-04-22 00:57:34,373 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:36,374 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:36,886 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:57:38,375 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:40,376 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:41,968 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:57:42,377 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:44,378 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:46,379 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:47,039 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:57:48,380 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:48,877 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-22 00:57:48,877 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: stop_status
+2023-04-22 00:57:49,568 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-22 00:57:49,571 DEBUG   SenderThread:2310435 [sender.py:send():375] send: history
+2023-04-22 00:57:49,571 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: summary_record
+2023-04-22 00:57:49,572 INFO    SenderThread:2310435 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-22 00:57:50,381 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:50,381 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/wandb-summary.json
+2023-04-22 00:57:52,052 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:57:52,382 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:54,383 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:56,383 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:57:57,099 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:57:58,385 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:58:00,385 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:58:00,420 DEBUG   SenderThread:2310435 [sender.py:send():375] send: stats
+2023-04-22 00:58:02,137 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:58:02,386 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:58:03,876 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: stop_status
+2023-04-22 00:58:03,877 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: stop_status
+2023-04-22 00:58:04,387 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:58:06,388 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:58:07,212 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:58:08,389 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:58:10,390 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:58:12,305 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:58:12,391 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:58:14,392 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:58:16,393 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:58:16,669 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: partial_history
+2023-04-22 00:58:16,672 DEBUG   SenderThread:2310435 [sender.py:send():375] send: history
+2023-04-22 00:58:16,672 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: summary_record
+2023-04-22 00:58:16,673 INFO    SenderThread:2310435 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-22 00:58:17,393 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/wandb-summary.json
+2023-04-22 00:58:17,396 DEBUG   SenderThread:2310435 [sender.py:send():375] send: telemetry
+2023-04-22 00:58:17,396 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:58:17,397 DEBUG   SenderThread:2310435 [sender.py:send():375] send: exit
+2023-04-22 00:58:17,397 INFO    SenderThread:2310435 [sender.py:send_exit():598] handling exit code: 0
+2023-04-22 00:58:17,397 INFO    SenderThread:2310435 [sender.py:send_exit():600] handling runtime: 136
+2023-04-22 00:58:17,398 INFO    SenderThread:2310435 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-22 00:58:17,398 INFO    SenderThread:2310435 [sender.py:send_exit():606] send defer
+2023-04-22 00:58:17,398 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: defer
+2023-04-22 00:58:17,398 INFO    HandlerThread:2310435 [handler.py:handle_request_defer():170] handle defer: 0
+2023-04-22 00:58:17,399 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: defer
+2023-04-22 00:58:17,399 INFO    SenderThread:2310435 [sender.py:send_request_defer():622] handle sender defer: 0
+2023-04-22 00:58:17,399 INFO    SenderThread:2310435 [sender.py:transition_state():626] send defer: 1
+2023-04-22 00:58:17,399 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: defer
+2023-04-22 00:58:17,399 INFO    HandlerThread:2310435 [handler.py:handle_request_defer():170] handle defer: 1
+2023-04-22 00:58:17,399 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: defer
+2023-04-22 00:58:17,400 INFO    SenderThread:2310435 [sender.py:send_request_defer():622] handle sender defer: 1
+2023-04-22 00:58:17,400 INFO    SenderThread:2310435 [sender.py:transition_state():626] send defer: 2
+2023-04-22 00:58:17,400 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: defer
+2023-04-22 00:58:17,400 INFO    HandlerThread:2310435 [handler.py:handle_request_defer():170] handle defer: 2
+2023-04-22 00:58:17,400 INFO    HandlerThread:2310435 [system_monitor.py:finish():190] Stopping system monitor
+2023-04-22 00:58:17,400 DEBUG   SystemMonitor:2310435 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-04-22 00:58:17,401 DEBUG   SystemMonitor:2310435 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-04-22 00:58:17,401 INFO    HandlerThread:2310435 [interfaces.py:finish():202] Joined cpu monitor
+2023-04-22 00:58:17,402 INFO    HandlerThread:2310435 [interfaces.py:finish():202] Joined disk monitor
+2023-04-22 00:58:17,520 INFO    HandlerThread:2310435 [interfaces.py:finish():202] Joined gpu monitor
+2023-04-22 00:58:17,521 INFO    HandlerThread:2310435 [interfaces.py:finish():202] Joined memory monitor
+2023-04-22 00:58:17,521 INFO    HandlerThread:2310435 [interfaces.py:finish():202] Joined network monitor
+2023-04-22 00:58:17,522 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: defer
+2023-04-22 00:58:17,522 INFO    SenderThread:2310435 [sender.py:send_request_defer():622] handle sender defer: 2
+2023-04-22 00:58:17,522 INFO    SenderThread:2310435 [sender.py:transition_state():626] send defer: 3
+2023-04-22 00:58:17,522 DEBUG   SenderThread:2310435 [sender.py:send():375] send: stats
+2023-04-22 00:58:17,522 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: defer
+2023-04-22 00:58:17,523 INFO    HandlerThread:2310435 [handler.py:handle_request_defer():170] handle defer: 3
+2023-04-22 00:58:17,523 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: defer
+2023-04-22 00:58:17,524 INFO    SenderThread:2310435 [sender.py:send_request_defer():622] handle sender defer: 3
+2023-04-22 00:58:17,524 INFO    SenderThread:2310435 [sender.py:transition_state():626] send defer: 4
+2023-04-22 00:58:17,524 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: defer
+2023-04-22 00:58:17,524 INFO    HandlerThread:2310435 [handler.py:handle_request_defer():170] handle defer: 4
+2023-04-22 00:58:17,524 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: defer
+2023-04-22 00:58:17,525 INFO    SenderThread:2310435 [sender.py:send_request_defer():622] handle sender defer: 4
+2023-04-22 00:58:17,525 INFO    SenderThread:2310435 [sender.py:transition_state():626] send defer: 5
+2023-04-22 00:58:17,525 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: defer
+2023-04-22 00:58:17,525 INFO    HandlerThread:2310435 [handler.py:handle_request_defer():170] handle defer: 5
+2023-04-22 00:58:17,526 DEBUG   SenderThread:2310435 [sender.py:send():375] send: summary
+2023-04-22 00:58:17,526 INFO    SenderThread:2310435 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-04-22 00:58:17,526 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: defer
+2023-04-22 00:58:17,527 INFO    SenderThread:2310435 [sender.py:send_request_defer():622] handle sender defer: 5
+2023-04-22 00:58:17,527 INFO    SenderThread:2310435 [sender.py:transition_state():626] send defer: 6
+2023-04-22 00:58:17,527 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: defer
+2023-04-22 00:58:17,527 INFO    HandlerThread:2310435 [handler.py:handle_request_defer():170] handle defer: 6
+2023-04-22 00:58:17,527 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: defer
+2023-04-22 00:58:17,527 INFO    SenderThread:2310435 [sender.py:send_request_defer():622] handle sender defer: 6
+2023-04-22 00:58:17,533 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: status_report
+2023-04-22 00:58:17,661 INFO    SenderThread:2310435 [sender.py:transition_state():626] send defer: 7
+2023-04-22 00:58:17,661 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: defer
+2023-04-22 00:58:17,661 INFO    HandlerThread:2310435 [handler.py:handle_request_defer():170] handle defer: 7
+2023-04-22 00:58:17,662 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: defer
+2023-04-22 00:58:17,662 INFO    SenderThread:2310435 [sender.py:send_request_defer():622] handle sender defer: 7
+2023-04-22 00:58:18,371 INFO    SenderThread:2310435 [sender.py:transition_state():626] send defer: 8
+2023-04-22 00:58:18,371 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: defer
+2023-04-22 00:58:18,372 INFO    HandlerThread:2310435 [handler.py:handle_request_defer():170] handle defer: 8
+2023-04-22 00:58:18,372 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: defer
+2023-04-22 00:58:18,372 INFO    SenderThread:2310435 [sender.py:send_request_defer():622] handle sender defer: 8
+2023-04-22 00:58:18,373 INFO    SenderThread:2310435 [sender.py:transition_state():626] send defer: 9
+2023-04-22 00:58:18,373 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: defer
+2023-04-22 00:58:18,373 INFO    HandlerThread:2310435 [handler.py:handle_request_defer():170] handle defer: 9
+2023-04-22 00:58:18,374 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: defer
+2023-04-22 00:58:18,374 INFO    SenderThread:2310435 [sender.py:send_request_defer():622] handle sender defer: 9
+2023-04-22 00:58:18,374 INFO    SenderThread:2310435 [dir_watcher.py:finish():365] shutting down directory watcher
+2023-04-22 00:58:18,394 INFO    Thread-12 :2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:58:18,394 INFO    SenderThread:2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/config.yaml
+2023-04-22 00:58:18,395 INFO    SenderThread:2310435 [dir_watcher.py:_on_file_modified():295] file/dir modified: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/wandb-summary.json
+2023-04-22 00:58:18,395 INFO    SenderThread:2310435 [dir_watcher.py:finish():395] scan: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files
+2023-04-22 00:58:18,395 INFO    SenderThread:2310435 [dir_watcher.py:finish():409] scan save: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/config.yaml config.yaml
+2023-04-22 00:58:18,396 INFO    SenderThread:2310435 [dir_watcher.py:finish():409] scan save: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/wandb-summary.json wandb-summary.json
+2023-04-22 00:58:18,396 INFO    SenderThread:2310435 [dir_watcher.py:finish():409] scan save: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/requirements.txt requirements.txt
+2023-04-22 00:58:18,402 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-22 00:58:18,402 INFO    SenderThread:2310435 [dir_watcher.py:finish():409] scan save: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/wandb-metadata.json wandb-metadata.json
+2023-04-22 00:58:18,408 INFO    SenderThread:2310435 [dir_watcher.py:finish():409] scan save: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/conda-environment.yaml conda-environment.yaml
+2023-04-22 00:58:18,408 INFO    SenderThread:2310435 [dir_watcher.py:finish():409] scan save: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log output.log
+2023-04-22 00:58:18,414 INFO    SenderThread:2310435 [sender.py:transition_state():626] send defer: 10
+2023-04-22 00:58:18,418 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: poll_exit
+2023-04-22 00:58:18,419 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: defer
+2023-04-22 00:58:18,419 INFO    HandlerThread:2310435 [handler.py:handle_request_defer():170] handle defer: 10
+2023-04-22 00:58:18,425 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: defer
+2023-04-22 00:58:18,425 INFO    SenderThread:2310435 [sender.py:send_request_defer():622] handle sender defer: 10
+2023-04-22 00:58:18,425 INFO    SenderThread:2310435 [file_pusher.py:finish():168] shutting down file pusher
+2023-04-22 00:58:18,864 INFO    wandb-upload_0:2310435 [upload_job.py:push():137] Uploaded file /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/config.yaml
+2023-04-22 00:58:18,886 INFO    wandb-upload_1:2310435 [upload_job.py:push():137] Uploaded file /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/wandb-summary.json
+2023-04-22 00:58:18,907 INFO    wandb-upload_2:2310435 [upload_job.py:push():137] Uploaded file /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/requirements.txt
+2023-04-22 00:58:18,922 INFO    wandb-upload_4:2310435 [upload_job.py:push():137] Uploaded file /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/output.log
+2023-04-22 00:58:18,970 INFO    wandb-upload_3:2310435 [upload_job.py:push():137] Uploaded file /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/files/conda-environment.yaml
+2023-04-22 00:58:19,170 INFO    Thread-11 (_thread_body):2310435 [sender.py:transition_state():626] send defer: 11
+2023-04-22 00:58:19,171 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: defer
+2023-04-22 00:58:19,171 INFO    HandlerThread:2310435 [handler.py:handle_request_defer():170] handle defer: 11
+2023-04-22 00:58:19,172 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: defer
+2023-04-22 00:58:19,172 INFO    SenderThread:2310435 [sender.py:send_request_defer():622] handle sender defer: 11
+2023-04-22 00:58:19,172 INFO    SenderThread:2310435 [file_pusher.py:join():173] waiting for file pusher
+2023-04-22 00:58:19,172 INFO    SenderThread:2310435 [sender.py:transition_state():626] send defer: 12
+2023-04-22 00:58:19,173 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: defer
+2023-04-22 00:58:19,173 INFO    HandlerThread:2310435 [handler.py:handle_request_defer():170] handle defer: 12
+2023-04-22 00:58:19,173 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: defer
+2023-04-22 00:58:19,174 INFO    SenderThread:2310435 [sender.py:send_request_defer():622] handle sender defer: 12
+2023-04-22 00:58:19,325 INFO    SenderThread:2310435 [sender.py:transition_state():626] send defer: 13
+2023-04-22 00:58:19,326 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: defer
+2023-04-22 00:58:19,326 INFO    HandlerThread:2310435 [handler.py:handle_request_defer():170] handle defer: 13
+2023-04-22 00:58:19,326 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: defer
+2023-04-22 00:58:19,326 INFO    SenderThread:2310435 [sender.py:send_request_defer():622] handle sender defer: 13
+2023-04-22 00:58:19,327 INFO    SenderThread:2310435 [sender.py:transition_state():626] send defer: 14
+2023-04-22 00:58:19,327 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: defer
+2023-04-22 00:58:19,327 INFO    HandlerThread:2310435 [handler.py:handle_request_defer():170] handle defer: 14
+2023-04-22 00:58:19,328 DEBUG   SenderThread:2310435 [sender.py:send():375] send: final
+2023-04-22 00:58:19,328 DEBUG   SenderThread:2310435 [sender.py:send():375] send: footer
+2023-04-22 00:58:19,328 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: defer
+2023-04-22 00:58:19,328 INFO    SenderThread:2310435 [sender.py:send_request_defer():622] handle sender defer: 14
+2023-04-22 00:58:19,330 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: poll_exit
+2023-04-22 00:58:19,330 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: poll_exit
+2023-04-22 00:58:19,331 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: server_info
+2023-04-22 00:58:19,332 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: get_summary
+2023-04-22 00:58:19,332 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: sampled_history
+2023-04-22 00:58:19,333 DEBUG   SenderThread:2310435 [sender.py:send_request():402] send_request: server_info
+2023-04-22 00:58:19,463 DEBUG   HandlerThread:2310435 [handler.py:handle_request():144] handle_request: shutdown
+2023-04-22 00:58:19,464 INFO    HandlerThread:2310435 [handler.py:finish():845] shutting down handler
+2023-04-22 00:58:20,332 INFO    WriterThread:2310435 [datastore.py:close():298] close: /home/jonathan/Downloads/Research/wandb/run-20230422_005600-tbso2x89/run-tbso2x89.wandb
+2023-04-22 00:58:20,462 INFO    SenderThread:2310435 [sender.py:finish():1550] shutting down sender
+2023-04-22 00:58:20,463 INFO    SenderThread:2310435 [file_pusher.py:finish():168] shutting down file pusher
+2023-04-22 00:58:20,463 INFO    SenderThread:2310435 [file_pusher.py:join():173] waiting for file pusher

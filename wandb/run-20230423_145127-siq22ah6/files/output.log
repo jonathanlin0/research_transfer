@@ -1,0 +1,31 @@
+
+epoch 0 out of 200
+
+
+
+
+ 92%|████████████████████████████████████████████████████████████████▍     | 46/50 [00:09<00:00,  5.33it/s]
+100%|██████████████████████████████████████████████████████████████████████| 50/50 [00:10<00:00,  4.90it/s]
+ 40%|████████████████████████████▍                                          | 4/10 [00:00<00:00,  6.11it/s]
+Traceback (most recent call last):
+  File "/home/jonathan/Downloads/Research/main.py", line 206, in <module>
+    test_loss, test_acc = test_step(model=model_0,
+  File "/home/jonathan/Downloads/Research/main.py", line 123, in test_step
+    for i, (X, y) in tqdm(enumerate(data_loader), total=len(data_loader)):
+  File "/home/jonathan/anaconda3/envs/jonathan/lib/python3.10/site-packages/tqdm/std.py", line 1178, in __iter__
+    for obj in iterable:
+  File "/home/jonathan/anaconda3/envs/jonathan/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/jonathan/anaconda3/envs/jonathan/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 671, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/jonathan/anaconda3/envs/jonathan/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 58, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/jonathan/anaconda3/envs/jonathan/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 58, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/jonathan/anaconda3/envs/jonathan/lib/python3.10/site-packages/torchvision/datasets/cifar.py", line 118, in __getitem__
+    img = self.transform(img)
+  File "/home/jonathan/anaconda3/envs/jonathan/lib/python3.10/site-packages/torchvision/transforms/transforms.py", line 135, in __call__
+    return F.to_tensor(pic)
+  File "/home/jonathan/anaconda3/envs/jonathan/lib/python3.10/site-packages/torchvision/transforms/functional.py", line 171, in to_tensor
+    return img.to(dtype=default_float_dtype).div(255)
+KeyboardInterrupt

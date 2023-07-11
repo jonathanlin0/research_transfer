@@ -1,0 +1,31 @@
+Files already downloaded and verified
+Files already downloaded and verified
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+  | Name           | Type              | Params
+-----------------------------------------------------
+0 | prep           | Conv2d            | 9.4 K
+1 | norm_1         | BatchNorm2d       | 128
+2 | activation     | LeakyReLU         | 0
+3 | maxpool        | MaxPool2d         | 0
+4 | middle_section | Sequential        | 4.8 M
+5 | avgpool        | AdaptiveAvgPool2d | 0
+6 | fc             | Linear            | 5.1 K
+7 | dropout_1      | Dropout           | 0
+8 | dropout_2      | Dropout           | 0
+-----------------------------------------------------
+4.8 M     Trainable params
+0         Non-trainable params
+4.8 M     Total params
+19.348    Total estimated model params size (MB)
+
+
+
+
+Epoch 0:  78%|██████████████████████████████████████████████████████████████████████████▉                     | 39/50 [00:06<00:01,  6.09it/s, v_num=72]
+/home/jonathan/anaconda3/envs/jonathan/lib/python3.10/site-packages/lightning/pytorch/trainer/call.py:54: UserWarning: Detected KeyboardInterrupt, attempting graceful shutdown...
+
+Epoch 0:  82%|██████████████████████████████████████████████████████████████████████████████▋                 | 41/50 [00:06<00:01,  6.16it/s, v_num=72]

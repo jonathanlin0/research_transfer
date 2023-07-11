@@ -1,0 +1,1 @@
+{"training_loss": 0.35662321898402, "training_acc": 84.03399999999999, "validation_loss": 0.9664499163627625, "validation_acc": 80.91000000000001, "_timestamp": 1682579098.1712575, "_runtime": 5310.545567512512, "_step": 199, "_wandb": {"runtime": 5310}}

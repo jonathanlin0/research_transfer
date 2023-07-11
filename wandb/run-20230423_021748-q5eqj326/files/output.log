@@ -1,0 +1,36 @@
+[INFO]: Epoch 1 of 200
+Training
+
+
+
+
+
+
+
+ 50%|██████████████████████████████████                                  | 392/782 [00:16<00:16, 23.61it/s]
+Traceback (most recent call last):
+  File "/home/jonathan/Downloads/Research/resnet18/train_wandb.py", line 100, in <module>
+    train_epoch_loss, train_epoch_acc = train(
+  File "/home/jonathan/Downloads/Research/resnet18/training_utils.py", line 15, in train
+    for i, data in tqdm(enumerate(trainloader), total=len(trainloader), position=0, leave=True):
+  File "/home/jonathan/anaconda3/envs/jonathan/lib/python3.10/site-packages/tqdm/std.py", line 1178, in __iter__
+    for obj in iterable:
+  File "/home/jonathan/anaconda3/envs/jonathan/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 628, in __next__
+    data = self._next_data()
+  File "/home/jonathan/anaconda3/envs/jonathan/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 671, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/jonathan/anaconda3/envs/jonathan/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 58, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/jonathan/anaconda3/envs/jonathan/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 58, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/jonathan/anaconda3/envs/jonathan/lib/python3.10/site-packages/torchvision/datasets/cifar.py", line 115, in __getitem__
+    img = Image.fromarray(img)
+  File "/home/jonathan/anaconda3/envs/jonathan/lib/python3.10/site-packages/PIL/Image.py", line 2834, in fromarray
+    return frombuffer(mode, size, obj, "raw", rawmode, 0, 1)
+  File "/home/jonathan/anaconda3/envs/jonathan/lib/python3.10/site-packages/PIL/Image.py", line 2761, in frombuffer
+    return frombytes(mode, size, data, decoder_name, args)
+  File "/home/jonathan/anaconda3/envs/jonathan/lib/python3.10/site-packages/PIL/Image.py", line 2706, in frombytes
+    im = new(mode, size)
+  File "/home/jonathan/anaconda3/envs/jonathan/lib/python3.10/site-packages/PIL/Image.py", line 2670, in new
+    return im._new(core.fill(mode, size, color))
+KeyboardInterrupt
