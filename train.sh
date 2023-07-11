@@ -1,4 +1,5 @@
 #!/bin/bash
+#testedit
 python3 main.py --batch_size 512 --blocks 2
 #python3 main.py --wandb on --batch_size 256
 #python3 main.py --wandb on --batch_size 512
