@@ -68,7 +68,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '-bs', '--batch_size', default='1024',
         help='set the batch size',
-        choices=['64','128', '256', '512', '1024', '2048']
+        choices=['32', '64', '128', '256', '512', '1024', '2048']
     )
     parser.add_argument(
         '-c', '--num_classes', default='10',
@@ -137,7 +137,7 @@ if __name__ == '__main__':
             config={
                 "learning_rate":learning_rate,
                 "architecture":"Berlin",
-                "dataset":"AK",
+                "dataset":"AK_classification",
                 "epochs":epochs,
                 "optimizer":optimizer.__class__.__name__,
                 "loss_fn":loss_fn.__class__.__name__,
@@ -149,7 +149,7 @@ if __name__ == '__main__':
         )
 
     # train_loader, valid_loader = get_data.get_data()
-    train_loader, valid_loader = ak_classification_dataloader.get_data(batch_size=64, num_workers=8)
+    train_loader, valid_loader = ak_classification_dataloader.get_data(batch_size=batch_size, num_workers=8)
     trainer = Trainer(max_epochs = epochs, fast_dev_run=False)
     if torch.backends.mps.is_available():
         rainer = Trainer(max_epochs = epochs, fast_dev_run=False, accelerator="mps", devices=1)

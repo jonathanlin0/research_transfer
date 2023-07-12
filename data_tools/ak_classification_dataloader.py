@@ -50,6 +50,9 @@ class ak_dataset(Dataset):
 def get_data(batch_size=100, num_workers=8):
     # cwd = "/home/jonathan/Desktop/Perona_Research"
     cwd = "/Users/jonathanlin/Documents/GitHub/research_transfer/"
+    # for the lab computer directory
+    if torch.cuda.is_available():
+        cwd = "/home/jonathan/Desktop/Perona_Research/"
 
     train_dataset = ak_dataset(
         csv_file = cwd + "data_tools/ak_classification_data_train.csv",

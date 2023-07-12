@@ -3,3 +3,4 @@ datasets/Animal_Kingdom/*
 lightning_logs/*
 *.DS_Store
 wandb/*
+datasets/cifar_10_data/cifar-10-python.tar.gz
