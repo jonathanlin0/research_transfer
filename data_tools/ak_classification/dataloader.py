@@ -9,7 +9,7 @@ from torchvision import transforms, utils
 import json
 
 # the structure of this dataset will follow CIFAR10 where __getitem__ returns a tuple of (image, target) where target is the index of the target class
-class ak_dataset(Dataset):
+class ak_classification_dataset(Dataset):
     """dataset for Animal Kingdom"""
 
     def __init__(self, csv_file, root_dir, animal_label, transform=None):
@@ -54,14 +54,14 @@ def get_data(batch_size=100, num_workers=8):
     if torch.cuda.is_available():
         cwd = "/home/jonathan/Desktop/Perona_Research/"
 
-    train_dataset = ak_dataset(
-        csv_file = cwd + "data_tools/ak_classification_data_train.csv",
+    train_dataset = ak_classification_dataset(
+        csv_file = cwd + "data_tools/ak_classification/dataset_train.csv",
         root_dir = cwd + "datasets/Animal_Kingdom/pose_estimation/dataset/",
         animal_label = "animal_parent_class"
     )
 
-    val_dataset = ak_dataset(
-        csv_file = cwd + "data_tools/ak_classification_data_test.csv",
+    val_dataset = ak_classification_dataset(
+        csv_file = cwd + "data_tools/ak_classification/dataset_test.csv",
         root_dir = cwd + "datasets/Animal_Kingdom/pose_estimation/dataset/",
         animal_label = "animal_parent_class"
     )

@@ -11,3 +11,6 @@ scikit-image
 matplotlib
 pytorch-lightning
 lightning
+opencv-python
+scikit-video
+sk-video

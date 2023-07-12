@@ -27,7 +27,7 @@ for i in tqdm(range(len(annotations))):
     if width == 640 and height == 360:
         row_list.append([annotations[i]["image"], annotations[i][LABEL]])
 
-with open(f"data_tools/ak_classification_data_train.csv", "w") as file:
+with open(f"data_tools/ak_classification/dataset_train.csv", "w") as file:
     writer = csv.writer(file)
     writer.writerows(row_list)
 
@@ -43,6 +43,6 @@ for i in tqdm(range(len(annotations))):
     if width == 640 and height == 360:
         row_list.append([annotations[i]["image"], annotations[i][LABEL]])
 
-with open(f"data_tools/ak_classification_data_test.csv", "w") as file:
+with open(f"data_tools/ak_classification/dataset_test.csv", "w") as file:
     writer = csv.writer(file)
     writer.writerows(row_list)

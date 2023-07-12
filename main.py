@@ -31,7 +31,8 @@ from models.berlin import Block_Berlin
 
 # import utility functions
 from data_tools import get_data
-from data_tools import ak_classification_dataloader
+from data_tools import ak_classification
+from data_tools.ak_classification import dataloader
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -149,7 +150,7 @@ if __name__ == '__main__':
         )
 
     # train_loader, valid_loader = get_data.get_data()
-    train_loader, valid_loader = ak_classification_dataloader.get_data(batch_size=batch_size, num_workers=8)
+    train_loader, valid_loader = dataloader.get_data(batch_size=batch_size, num_workers=8)
     trainer = Trainer(max_epochs = epochs, fast_dev_run=False)
     if torch.backends.mps.is_available():
         rainer = Trainer(max_epochs = epochs, fast_dev_run=False, accelerator="mps", devices=1)
