@@ -31,6 +31,7 @@ from models.berlin import Block_Berlin
 
 # import utility functions
 from data_tools import get_data
+from data_tools import ak_classification_dataloader
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -73,6 +74,10 @@ if __name__ == '__main__':
         '-c', '--num_classes', default='10',
         help='set the number of classes'
     )
+    parser.add_argument(
+        '-e', '--epochs', default='150',
+        help='set the number of epochs'
+    )
     args = vars(parser.parse_args())
 
     assert(args["num_classes"].isdigit())
@@ -86,6 +91,8 @@ if __name__ == '__main__':
     print(f"[INFO]: Set the batch size to {batch_size}")
     num_classes = int(args["num_classes"])
     print(f"[INFO]: Set the number of classes to {num_classes}")
+    epochs = int(args["epochs"])
+    print(f"[INFO]: Set the number of epochs to {epochs}")
     if args["activation"] == "relu":
         print("[INFO]: Set activation to ReLU")
         activation = nn.ReLU(inplace=True)
@@ -118,12 +125,12 @@ if __name__ == '__main__':
                     num_classes = num_classes,
                     track_wandb = track_wandb)
 
-    epochs = 100
     loss_fn = nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(params=model.parameters(),
                                 lr=learning_rate)
 
     if track_wandb:
+        wandb.login()
         wandb.init(
             project="Perona_Research",
 
@@ -142,6 +149,7 @@ if __name__ == '__main__':
         )
 
     train_loader, valid_loader = get_data.get_data()
+    # train_loader, valid_loader = ak_classification_dataloader.get_data()
     trainer = Trainer(max_epochs = epochs, fast_dev_run=False)
     if torch.backends.mps.is_available():
         rainer = Trainer(max_epochs = epochs, fast_dev_run=False, accelerator="mps", devices=1)

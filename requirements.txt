@@ -7,6 +7,7 @@ tqdm
 requests
 pandas
 scikit-learn
+scikit-image
 matplotlib
 pytorch-lightning
 lightning

@@ -53,3 +53,16 @@ def get_data(batch_size=1000, num_workers=8):
     )
 
     return train_loader, valid_loader
+
+if __name__ == '__main__':
+    hi_1, hi_2 = get_data()
+
+    for batch, (X, y) in enumerate(hi_1):
+        # print(i_batch)
+        print(batch)
+        print("----------------")
+        print(X.dtype)
+        print(y.shape)
+        print("----------------")
+        if batch == 1:
+            break

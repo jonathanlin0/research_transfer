@@ -1,3 +1,4 @@
 
 datasets/Animal_Kingdom/*
 lightning_logs/*
+*.DS_Store
