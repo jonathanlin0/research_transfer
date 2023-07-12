@@ -24,3 +24,10 @@ config: {'learning_rate': 0.001, 'architecture': 'Berlin', 'dataset': 'CIFAR10',
 2023-07-11 17:06:54,133 INFO    MainThread:66727 [wandb_run.py:_redirect():2072] Wrapping output streams.
 2023-07-11 17:06:54,133 INFO    MainThread:66727 [wandb_run.py:_redirect():2097] Redirects installed.
 2023-07-11 17:06:54,134 INFO    MainThread:66727 [wandb_init.py:init():830] run started, returning control to user process
+2023-07-11 17:08:26,435 INFO    MainThread:66727 [wandb_run.py:_finish():1887] finishing run jonathanlin/Perona_Research/7sl0zp36
+2023-07-11 17:08:26,436 INFO    MainThread:66727 [wandb_run.py:_atexit_cleanup():2121] got exitcode: 0
+2023-07-11 17:08:26,436 INFO    MainThread:66727 [wandb_run.py:_restore():2104] restore
+2023-07-11 17:08:26,436 INFO    MainThread:66727 [wandb_run.py:_restore():2110] restore done
+2023-07-11 17:08:35,515 INFO    MainThread:66727 [wandb_run.py:_footer_history_summary_info():3464] rendering history
+2023-07-11 17:08:35,515 INFO    MainThread:66727 [wandb_run.py:_footer_history_summary_info():3496] rendering summary
+2023-07-11 17:08:35,518 INFO    MainThread:66727 [wandb_run.py:_footer_sync_info():3423] logging synced files

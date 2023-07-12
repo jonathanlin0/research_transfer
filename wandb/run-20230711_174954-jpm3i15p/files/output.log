@@ -1,0 +1,51 @@
+Files already downloaded and verified
+Files already downloaded and verified
+Sanity Checking: 0it [00:00, ?it/s]
+GPU available: True (mps), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+GPU available: True (mps), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name           | Type              | Params
+-----------------------------------------------------
+0 | prep           | Conv2d            | 9.4 K
+1 | norm_1         | BatchNorm2d       | 128
+2 | activation     | LeakyReLU         | 0
+3 | maxpool        | MaxPool2d         | 0
+4 | middle_section | Sequential        | 1.1 M
+5 | avgpool        | AdaptiveAvgPool2d | 0
+6 | fc             | Linear            | 2.6 K
+7 | dropout_1      | Dropout           | 0
+8 | dropout_2      | Dropout           | 0
+-----------------------------------------------------
+1.2 M     Trainable params
+0         Non-trainable params
+1.2 M     Total params
+
+
+Sanity Checking DataLoader 0: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00, 15.84it/s]
+
+
+
+Epoch 1:   0%|                                                                                                                                                                                                      | 0/50 [00:00<?, ?it/s, v_num=32]
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x1334760e0>
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1478, in __del__
+    self._shutdown_workers()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1442, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/popen_fork.py", line 40, in wait
+    if not wait([self.sentinel], timeout):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/connection.py", line 931, in wait
+    ready = selector.select(timeout)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+
+Epoch 1:  32%|████████████████████████████████████████████████████████████▍                                                                                                                                | 16/50 [00:54<01:56,  3.43s/it, v_num=32]
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/lightning/pytorch/trainer/call.py:52: UserWarning: Detected KeyboardInterrupt, attempting graceful shutdown...
+  rank_zero_warn("Detected KeyboardInterrupt, attempting graceful shutdown...")

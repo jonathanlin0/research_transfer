@@ -1,0 +1,69 @@
+wandb_version: 1
+
+learning_rate:
+  desc: null
+  value: 0.001
+architecture:
+  desc: null
+  value: Berlin
+dataset:
+  desc: null
+  value: AK
+epochs:
+  desc: null
+  value: 150
+optimizer:
+  desc: null
+  value: Adam
+loss_fn:
+  desc: null
+  value: CrossEntropyLoss
+blocks:
+  desc: null
+  value: 2
+activation:
+  desc: null
+  value: leaky_relu
+dropout:
+  desc: null
+  value: 0.2
+batch_size:
+  desc: null
+  value: 128
+_wandb:
+  desc: null
+  value:
+    python_version: 3.10.11
+    cli_version: 0.15.5
+    framework: huggingface
+    huggingface_version: 4.29.2
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1689122365.828892
+    t:
+      1:
+      - 1
+      - 5
+      - 11
+      - 41
+      - 49
+      - 53
+      - 55
+      2:
+      - 1
+      - 5
+      - 11
+      - 41
+      - 49
+      - 53
+      - 55
+      3:
+      - 2
+      - 16
+      - 23
+      4: 3.10.11
+      5: 0.15.5
+      6: 4.29.2
+      8:
+      - 4
+      - 5

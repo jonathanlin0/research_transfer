@@ -1,0 +1,43 @@
+{
+    "os": "macOS-13.4.1-arm64-arm-64bit",
+    "python": "3.10.11",
+    "heartbeatAt": "2023-07-12T00:39:26.132922",
+    "startedAt": "2023-07-12T00:39:25.821807",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--batch_size",
+        "128",
+        "--blocks",
+        "2",
+        "--num_classes",
+        "5",
+        "--wandb",
+        "on"
+    ],
+    "state": "running",
+    "program": "/Users/jonathanlin/Documents/GitHub/research_transfer/main.py",
+    "codePath": "main.py",
+    "git": {
+        "remote": "https://github.com/jonathanlin0/research_transfer.git",
+        "commit": "4ffd070946d34fb874b98a803d764b03f0eb75d1"
+    },
+    "email": "jonathanlinonline@gmail.com",
+    "root": "/Users/jonathanlin/Documents/GitHub/research_transfer",
+    "host": "dhcp-171-116.caltech.edu",
+    "username": "jonathanlin",
+    "executable": "/Library/Frameworks/Python.framework/Versions/3.10/bin/python3",
+    "cpu_count": 10,
+    "cpu_count_logical": 10,
+    "disk": {
+        "total": 926.3517189025879,
+        "used": 8.441200256347656
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 32.0
+    }
+}

@@ -137,7 +137,7 @@ if __name__ == '__main__':
             config={
                 "learning_rate":learning_rate,
                 "architecture":"Berlin",
-                "dataset":"CIFAR10",
+                "dataset":"AK",
                 "epochs":epochs,
                 "optimizer":optimizer.__class__.__name__,
                 "loss_fn":loss_fn.__class__.__name__,
@@ -148,8 +148,8 @@ if __name__ == '__main__':
             }
         )
 
-    train_loader, valid_loader = get_data.get_data()
-    # train_loader, valid_loader = ak_classification_dataloader.get_data()
+    # train_loader, valid_loader = get_data.get_data()
+    train_loader, valid_loader = ak_classification_dataloader.get_data(batch_size=64, num_workers=8)
     trainer = Trainer(max_epochs = epochs, fast_dev_run=False)
     if torch.backends.mps.is_available():
         rainer = Trainer(max_epochs = epochs, fast_dev_run=False, accelerator="mps", devices=1)
