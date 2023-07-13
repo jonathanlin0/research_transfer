@@ -15,6 +15,8 @@ target_category = "ak_P1"
 
 row_list = [["image_directory", "label"]]
 
+dimensions = {}
+
 # do this for training data
 f = open(f"{annotation_dir}{target_category}/train.json", "r")
 annotations = json.load(f)
@@ -24,6 +26,10 @@ for i in tqdm(range(len(annotations))):
     img = Image.open(f"{image_dir}{annotations[i]['image']}")
     width = img.width
     height = img.height
+    if (height, width) in dimensions:
+        dimensions[(height, width)] += 1
+    else:
+        dimensions[(height, width)] = 1
     if width == 640 and height == 360:
         row_list.append([annotations[i]["image"], annotations[i][LABEL]])
 
@@ -40,9 +46,18 @@ for i in tqdm(range(len(annotations))):
     img = Image.open(f"{image_dir}{annotations[i]['image']}")
     width = img.width
     height = img.height
+    if (height, width) in dimensions:
+        dimensions[(height, width)] += 1
+    else:
+        dimensions[(height, width)] = 1
     if width == 640 and height == 360:
         row_list.append([annotations[i]["image"], annotations[i][LABEL]])
 
 with open(f"data_tools/ak_classification/dataset_test.csv", "w") as file:
     writer = csv.writer(file)
     writer.writerows(row_list)
+
+# print out distribution of dimensions
+print("Dimension Distribution:")
+for key in dimensions:
+    print(f"Dimensions count for {key}: {dimensions[key]}")

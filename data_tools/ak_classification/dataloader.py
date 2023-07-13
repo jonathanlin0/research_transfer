@@ -41,9 +41,17 @@ class ak_classification_dataset(Dataset):
         
         label = self.label_to_int[self.landmarks_frame.iloc[idx, 1]]
 
-        image = io.imread(img_name)
+        image = PIL.Image.open(img_name, mode="r")
+        # have to use PIL instead of io.imread because transform expects PIL image
+        # image = io.imread(img_name)
+        
+        print(type(image))
+        
+        if self.transform is not None:
+            image = self.transform(image)
+
         image = np.reshape(image, (3, 360, 640))
-        image = (torch.from_numpy(image)).to(torch.float32)
+        image = image.to(torch.float32)
 
         return (image, label)
 
@@ -57,13 +65,23 @@ def get_data(batch_size=100, num_workers=8):
     train_dataset = ak_classification_dataset(
         csv_file = cwd + "data_tools/ak_classification/dataset_train.csv",
         root_dir = cwd + "datasets/Animal_Kingdom/pose_estimation/dataset/",
-        animal_label = "animal_parent_class"
+        animal_label = "animal_parent_class",
+        transform=torchvision.transforms.Compose([
+                         transforms.RandomHorizontalFlip(),
+                         transforms.RandAugment(),
+                         transforms.ToTensor()
+                     ])
     )
 
     val_dataset = ak_classification_dataset(
         csv_file = cwd + "data_tools/ak_classification/dataset_test.csv",
         root_dir = cwd + "datasets/Animal_Kingdom/pose_estimation/dataset/",
-        animal_label = "animal_parent_class"
+        animal_label = "animal_parent_class",
+        transform=torchvision.transforms.Compose([
+                         transforms.RandomHorizontalFlip(),
+                         transforms.RandAugment(),
+                         transforms.ToTensor()
+                     ])
     )
 
     train_loader = DataLoader(

@@ -22,7 +22,7 @@ def get_data(batch_size=1000, num_workers=8):
         train=True,
         download=True,
         # transform=ToTensor(),
-        transform =torchvision.transforms.Compose([
+        transform = torchvision.transforms.Compose([
             # transforms.RandomHorizontalFlip(),
             # transforms.RandomRotation(degrees=15),
             transforms.RandAugment(),
