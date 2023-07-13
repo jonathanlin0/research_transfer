@@ -39,50 +39,71 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '-l', '--learning_rate', default='0.001',
+        type = float,
         help='set the learning rate of the optimizer',
-        choices=['0.1', '0.01', '0.001']
+        choices=[0.1, 0.01, 0.001]
     )
     parser.add_argument(
         '-o', '--optimizer', default='Adam',
+        type = str,
         help='set the optimizer',
         choices=['Adam', 'SGD']
     )
     parser.add_argument(
         '-b', '--blocks', default='3',
+        type = int,
         help='set the number of blocks',
-        choices=['1', '2', '3', '4', '5'] # limited to 5 due to memory on this computer
+        choices=[1, 2, 3, 4, 5] # limited to 5 due to memory on this computer
     )
     parser.add_argument(
         '-f', '--activation', default='leaky_relu',
+        type = str,
         help='set the activation function',
         choices=['relu', 'leaky_relu', 'tanh']
     )
     parser.add_argument(
         '-w', '--wandb', default='off',
+        type = str,
         help='turn on or off wandb tracking',
         choices=['true', 'false', 't', 'f', 'on', 'off']
     )
     parser.add_argument(
         '-d', '--dropout', default='0.2',
+        type = float,
         help='set the dropout rate',
-        choices=['0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8']
+        choices=[0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
     )
     parser.add_argument(
         '-bs', '--batch_size', default='32',
+        type = int,
         help='set the batch size',
-        choices=['32', '64', '128', '256', '512', '1024', '2048']
+        choices=[32, 64, 128, 256, 512, 1024, 2048]
     )
     parser.add_argument(
-        '-c', '--num_classes', default='10',
+        '-c', '--num_classes',
+        type = int,
+        required = True,
         help='set the number of classes'
     )
     parser.add_argument(
         '-e', '--epochs', default='150',
+        type = int,
         help='set the number of epochs'
     )
+    parser.add_argument(
+        '-m', '--model', default='budapest',
+        type = str,
+        required = True,
+        help='set the model used for image classification',
+        choices=['beijing', 'berlin', 'budapest']
+    )
+    parser.add_argument(
+        '-ds', '--dataset', default='ak_classification',
+        type = str,
+        help='set the dataset used for image classification',
+        choices=['CIFAR10', 'ak_classification']
+    )
     args = vars(parser.parse_args())
-
-    assert(args["num_classes"].isdigit())
 
     learning_rate = float(args["learning_rate"])
     num_blocks = int(args["blocks"])
@@ -95,6 +116,10 @@ if __name__ == '__main__':
     print(f"[INFO]: Set the number of classes to {num_classes}")
     epochs = int(args["epochs"])
     print(f"[INFO]: Set the number of epochs to {epochs}")
+    model_name = args["model"]
+    print(f"[INFO]: Set the model to {model_name}")
+    dataset = args["dataset"]
+    print(f"[INFO]: Set the dataset to {dataset}")
     if args["activation"] == "relu":
         print("[INFO]: Set activation to ReLU")
         activation = nn.ReLU(inplace=True)
@@ -112,23 +137,28 @@ if __name__ == '__main__':
         track_wandb = False
 
     # create model object
-    # model = beijing.beijing(img_channels=3,
-    #                   block=Block_Beijing,
-    #                   num_blocks = num_blocks,
-    #                   activation = activation,
-    #                   lr = learning_rate,
-    #                   num_classes=10)
-    # model = berlin.berlin(img_channels=3,
-    #                 block=Block_Berlin,
-    #                 num_blocks = num_blocks,
-    #                 activation = activation,
-    #                 lr = learning_rate,
-    #                 dropout = dropout,
-    #                 num_classes = num_classes,
-    #                 track_wandb = track_wandb)
-    model = budapest.budapest(track_wandb=False,
-                        lr=learning_rate,
-                        num_classes=num_classes)
+    model = None
+    match model_name:
+        case "beijing":
+            model = beijing.beijing(img_channels=3,
+                            block=Block_Beijing,
+                            num_blocks = num_blocks,
+                            activation = activation,
+                            lr = learning_rate,
+                            num_classes=10)
+        case "berlin":
+            model = berlin.berlin(img_channels=3,
+                            block=Block_Berlin,
+                            num_blocks = num_blocks,
+                            activation = activation,
+                            lr = learning_rate,
+                            dropout = dropout,
+                            num_classes = num_classes,
+                            track_wandb = track_wandb)
+        case "budapest":
+            model = budapest.budapest(track_wandb=False,
+                                lr=learning_rate,
+                                num_classes=num_classes)
 
     loss_fn = nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(params=model.parameters(),
@@ -141,8 +171,8 @@ if __name__ == '__main__':
 
             config={
                 "learning_rate":learning_rate,
-                "architecture":"Berlin",
-                "dataset":"AK_classification",
+                "architecture":model_name,
+                "dataset":dataset,
                 "epochs":epochs,
                 "optimizer":optimizer.__class__.__name__,
                 "loss_fn":loss_fn.__class__.__name__,
@@ -152,9 +182,13 @@ if __name__ == '__main__':
                 "batch_size":batch_size
             }
         )
-
-    # train_loader, valid_loader = get_data.get_data()
-    train_loader, valid_loader = dataloader.get_data(batch_size=batch_size, num_workers=8)
+    train_loader, valid_loader = None, None
+    match dataset:
+        case "CIFAR10":
+            train_loader, valid_loader = get_data.get_data()
+        case "ak_classification":
+            train_loader, valid_loader = dataloader.get_data(batch_size=batch_size, num_workers=8)
+    
     trainer = Trainer(max_epochs = epochs, fast_dev_run=False)
     trainer.fit(model, train_loader, valid_loader)
 
