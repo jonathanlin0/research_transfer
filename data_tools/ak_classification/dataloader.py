@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms, utils
 import json
+import torchvision
+import PIL
 
 # the structure of this dataset will follow CIFAR10 where __getitem__ returns a tuple of (image, target) where target is the index of the target class
 class ak_classification_dataset(Dataset):
@@ -44,8 +46,6 @@ class ak_classification_dataset(Dataset):
         image = PIL.Image.open(img_name, mode="r")
         # have to use PIL instead of io.imread because transform expects PIL image
         # image = io.imread(img_name)
-        
-        print(type(image))
         
         if self.transform is not None:
             image = self.transform(image)
