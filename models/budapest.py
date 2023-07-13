@@ -51,7 +51,8 @@ class budapest(pl.LightningModule):
         self.feature_extractor = nn.Sequential(*layers)
 
         num_target_classes = num_classes
-        self.classifier = nn.Linear(num_filters, num_target_classes)
+        self.dense = nn.Linear(num_filters, num_target_classes * 2)
+        self.classifier = nn.Linear(num_target_classes * 2, num_target_classes)
 
         self.lr = lr
         self.track_wandb = track_wandb
@@ -66,7 +67,8 @@ class budapest(pl.LightningModule):
         self.feature_extractor.eval()
         with torch.no_grad():
             representations = self.feature_extractor(x).flatten(1)
-        x = self.classifier(representations)
+        x = self.dense(representations)
+        x = self.classifier(x)
 
         return x
     

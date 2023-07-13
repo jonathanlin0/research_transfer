@@ -140,27 +140,26 @@ if __name__ == '__main__':
 
     # create model object
     model = None
-    match model_name:
-        case "beijing":
-            model = beijing.beijing(img_channels=3,
-                            block=Block_Beijing,
-                            num_blocks = num_blocks,
-                            activation = activation,
-                            lr = learning_rate,
-                            num_classes=10)
-        case "berlin":
-            model = berlin.berlin(img_channels=3,
-                            block=Block_Berlin,
-                            num_blocks = num_blocks,
-                            activation = activation,
-                            lr = learning_rate,
-                            dropout = dropout,
-                            num_classes = num_classes,
-                            track_wandb = track_wandb)
-        case "budapest":
-            model = budapest.budapest(track_wandb=track_wandb,
-                                lr=learning_rate,
-                                num_classes=num_classes)
+    if model_name == "beijing":
+        model = beijing.beijing(img_channels=3,
+                        block=Block_Beijing,
+                        num_blocks = num_blocks,
+                        activation = activation,
+                        lr = learning_rate,
+                        num_classes=10)
+    if model_name == "berlin":
+        model = berlin.berlin(img_channels=3,
+                        block=Block_Berlin,
+                        num_blocks = num_blocks,
+                        activation = activation,
+                        lr = learning_rate,
+                        dropout = dropout,
+                        num_classes = num_classes,
+                        track_wandb = track_wandb)
+    if model_name == "budapest":
+        model = budapest.budapest(track_wandb=track_wandb,
+                            lr=learning_rate,
+                            num_classes=num_classes)
 
     loss_fn = nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(params=model.parameters(),
@@ -185,11 +184,10 @@ if __name__ == '__main__':
             }
         )
     train_loader, valid_loader = None, None
-    match dataset:
-        case "CIFAR10":
-            train_loader, valid_loader = get_data.get_data()
-        case "ak_classification":
-            train_loader, valid_loader = dataloader.get_data(batch_size=batch_size, num_workers=8)
+    if dataset == "CIFAR10":
+        train_loader, valid_loader = get_data.get_data()
+    if dataset == "ak_classification":
+        train_loader, valid_loader = dataloader.get_data(batch_size=batch_size, num_workers=8)
     
     trainer = Trainer(max_epochs = epochs, fast_dev_run=False)
     trainer.fit(model, train_loader, valid_loader)
