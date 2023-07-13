@@ -35,6 +35,8 @@ from data_tools import get_data
 from data_tools import ak_classification
 from data_tools.ak_classification import dataloader
 
+from lightning.pytorch.callbacks import TQDMProgressBar
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -156,7 +158,7 @@ if __name__ == '__main__':
                             num_classes = num_classes,
                             track_wandb = track_wandb)
         case "budapest":
-            model = budapest.budapest(track_wandb=False,
+            model = budapest.budapest(track_wandb=track_wandb,
                                 lr=learning_rate,
                                 num_classes=num_classes)
 

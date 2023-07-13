@@ -50,7 +50,6 @@ class budapest(pl.LightningModule):
         layers = list(backbone.children())[:-1]
         self.feature_extractor = nn.Sequential(*layers)
 
-        # use the pretrained model to classify cifar-10 (10 image classes)
         num_target_classes = num_classes
         self.classifier = nn.Linear(num_filters, num_target_classes)
 
