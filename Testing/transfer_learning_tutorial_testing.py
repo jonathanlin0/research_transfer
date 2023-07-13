@@ -21,6 +21,11 @@ import torch.utils.data as data
 from torchvision.datasets import MNIST
 from torch.nn import functional as F
 import torchvision.models as models
+import os
+
+import sys
+parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(parent_dir)
 
 from data_tools import ak_classification
 from data_tools.ak_classification import dataloader
@@ -31,11 +36,11 @@ import urllib.request
 # Disable SSL verification
 ssl._create_default_https_context = ssl._create_unverified_context
 
-import sys
-sys.path.append("..")
-    
+
 class ImagenetTransferLearning(pl.LightningModule):
-    def __init__(self):
+    def __init__(self, 
+        track_wandb: bool,
+        lr: float):
         super().__init__()
 
         # init a pretrained resnet
@@ -48,13 +53,22 @@ class ImagenetTransferLearning(pl.LightningModule):
         num_target_classes = 5
         self.classifier = nn.Linear(num_filters, num_target_classes)
 
-        self.lr = 0.001
+        self.lr = lr
+        self.track_wandb = track_wandb
+        self.train_step_losses = []
+        self.validation_step_losses = []
+        self.train_step_acc = []
+        self.validation_step_acc = []
+        self.last_train_acc = 0
+        self.last_train_loss = 0
 
     def forward(self, x):
         self.feature_extractor.eval()
         with torch.no_grad():
             representations = self.feature_extractor(x).flatten(1)
         x = self.classifier(representations)
+
+        return x
     
     def training_step(self, batch, batch_idx):
         images, labels = batch
@@ -140,9 +154,6 @@ class ImagenetTransferLearning(pl.LightningModule):
                         "training_acc":self.last_train_acc,
                         "validation_loss":avg_loss,
                         "validation_acc":avg_acc})
-        
-        print(self.last_train_acc)
-        print(avg_acc)
 
         # clear memory
         self.validation_step_losses.clear()
@@ -151,7 +162,6 @@ class ImagenetTransferLearning(pl.LightningModule):
         return {'val_loss':avg_loss}
 
 if __name__ == "__main__":
-    model = ImagenetTransferLearning()
+    model = ImagenetTransferLearning(False, 0.001)
     trainer = Trainer()
     trainer.fit(model)
-

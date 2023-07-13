@@ -28,6 +28,7 @@ from models import beijing
 from models.beijing import Block_Beijing
 from models import berlin
 from models.berlin import Block_Berlin
+from models import budapest
 
 # import utility functions
 from data_tools import get_data
@@ -67,7 +68,7 @@ if __name__ == '__main__':
         choices=['0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8']
     )
     parser.add_argument(
-        '-bs', '--batch_size', default='1024',
+        '-bs', '--batch_size', default='32',
         help='set the batch size',
         choices=['32', '64', '128', '256', '512', '1024', '2048']
     )
@@ -117,14 +118,17 @@ if __name__ == '__main__':
     #                   activation = activation,
     #                   lr = learning_rate,
     #                   num_classes=10)
-    model = berlin.berlin(img_channels=3,
-                    block=Block_Berlin,
-                    num_blocks = num_blocks,
-                    activation = activation,
-                    lr = learning_rate,
-                    dropout = dropout,
-                    num_classes = num_classes,
-                    track_wandb = track_wandb)
+    # model = berlin.berlin(img_channels=3,
+    #                 block=Block_Berlin,
+    #                 num_blocks = num_blocks,
+    #                 activation = activation,
+    #                 lr = learning_rate,
+    #                 dropout = dropout,
+    #                 num_classes = num_classes,
+    #                 track_wandb = track_wandb)
+    model = budapest.budapest(track_wandb=False,
+                        lr=learning_rate,
+                        num_classes=num_classes)
 
     loss_fn = nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(params=model.parameters(),
@@ -152,8 +156,6 @@ if __name__ == '__main__':
     # train_loader, valid_loader = get_data.get_data()
     train_loader, valid_loader = dataloader.get_data(batch_size=batch_size, num_workers=8)
     trainer = Trainer(max_epochs = epochs, fast_dev_run=False)
-    if torch.backends.mps.is_available():
-        rainer = Trainer(max_epochs = epochs, fast_dev_run=False, accelerator="mps", devices=1)
     trainer.fit(model, train_loader, valid_loader)
 
     if track_wandb:

@@ -9,6 +9,7 @@ git add resnet18/
 git add Testing/dataloaders_tutorial/
 
 # files
+git add __init__.py
 git add .gitignore
 git add git_add.sh
 git add main.py

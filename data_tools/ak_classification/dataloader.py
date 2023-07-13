@@ -55,7 +55,7 @@ class ak_classification_dataset(Dataset):
 
         return (image, label)
 
-def get_data(batch_size=100, num_workers=8):
+def get_data(batch_size=32, num_workers=8):
     # cwd = "/home/jonathan/Desktop/Perona_Research"
     cwd = "/Users/jonathanlin/Documents/GitHub/research_transfer/"
     # for the lab computer directory
