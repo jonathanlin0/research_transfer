@@ -6,7 +6,7 @@ pandas
 yarl
 async-timeout
 requests
-Pillow==7.0
+Pillow
 idna_ssl
 charset-normalizer
 aiosignal

@@ -17,6 +17,9 @@ row_list = [["image_directory", "label"]]
 
 dimensions = {}
 
+classes_list = []
+classes_set = set()
+
 # do this for training data
 f = open(f"{annotation_dir}{target_category}/train.json", "r")
 annotations = json.load(f)
@@ -31,11 +34,17 @@ for i in tqdm(range(len(annotations))):
     else:
         dimensions[(height, width)] = 1
     if width == 640 and height == 360:
-        row_list.append([annotations[i]["image"], annotations[i][LABEL]])
+        curr_class = annotations[i][LABEL]
+        if curr_class not in classes_set:
+            classes_list.append(curr_class)
+            classes_set.add(curr_class)
+        row_list.append([annotations[i]["image"], classes_list.index(annotations[i][LABEL])])
 
 with open(f"data_tools/ak_classification/dataset_train.csv", "w") as file:
     writer = csv.writer(file)
     writer.writerows(row_list)
+
+row_list = [["image_directory", "label"]]
 
 # do the same thing but for testing/validation data
 f = open(f"{annotation_dir}{target_category}/test.json", "r")
@@ -51,7 +60,11 @@ for i in tqdm(range(len(annotations))):
     else:
         dimensions[(height, width)] = 1
     if width == 640 and height == 360:
-        row_list.append([annotations[i]["image"], annotations[i][LABEL]])
+        curr_class = annotations[i][LABEL]
+        if curr_class not in classes_set:
+            classes_list.append(curr_class)
+            classes_set.add(curr_class)
+        row_list.append([annotations[i]["image"], classes_list.index(annotations[i][LABEL])])
 
 with open(f"data_tools/ak_classification/dataset_test.csv", "w") as file:
     writer = csv.writer(file)

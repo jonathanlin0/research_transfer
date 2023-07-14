@@ -19,16 +19,6 @@ class ak_classification_dataset(Dataset):
         self.root_dir = root_dir
         self.transform = transform
 
-        self.label_to_int = {}
-        if animal_label == "animal_parent_class":
-            self.label_to_int = {
-                "Reptile": 0,
-                "Bird": 1,
-                "Mammal": 2,
-                "Amphibian": 3,
-                "Fish": 4
-            }
-
     def __len__(self):
         return len(self.landmarks_frame)
 
@@ -41,7 +31,7 @@ class ak_classification_dataset(Dataset):
         img_name = os.path.join(self.root_dir,
                                 self.landmarks_frame.iloc[idx, 0])
         
-        label = self.label_to_int[self.landmarks_frame.iloc[idx, 1]]
+        label = self.landmarks_frame.iloc[idx, 1]
 
         image = PIL.Image.open(img_name, mode="r")
         # have to use PIL instead of io.imread because transform expects PIL image
@@ -57,10 +47,10 @@ class ak_classification_dataset(Dataset):
 
 def get_data(batch_size=32, num_workers=8):
     # cwd = "/home/jonathan/Desktop/Perona_Research"
-    cwd = "/Users/jonathanlin/Documents/GitHub/research_transfer/"
-    # for the lab computer directory
-    if torch.cuda.is_available():
-        cwd = "/home/jonathan/Desktop/Perona_Research/"
+    cwd = os.path.dirname(os.path.realpath(__file__))
+    cwd = cwd[0:cwd.rfind("/")]
+    cwd = cwd[0:cwd.rfind("/") + 1]
+    # set the root directory of the project to 2 layers above the current dataloader
 
     train_dataset = ak_classification_dataset(
         csv_file = cwd + "data_tools/ak_classification/dataset_train.csv",
