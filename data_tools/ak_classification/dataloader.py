@@ -68,8 +68,8 @@ def get_data(batch_size=32, num_workers=8):
         root_dir = cwd + "datasets/Animal_Kingdom/pose_estimation/dataset/",
         animal_label = "animal_parent_class",
         transform=torchvision.transforms.Compose([
-                         transforms.RandomHorizontalFlip(),
-                         transforms.RandAugment(),
+                        #  transforms.RandomHorizontalFlip(),
+                        #  transforms.RandAugment(),
                          transforms.ToTensor()
                      ])
     )

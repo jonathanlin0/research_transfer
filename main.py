@@ -159,7 +159,8 @@ if __name__ == '__main__':
     if model_name == "budapest":
         model = budapest.budapest(track_wandb=track_wandb,
                             lr=learning_rate,
-                            num_classes=num_classes)
+                            num_classes=num_classes,
+                            dropout=dropout)
 
     loss_fn = nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(params=model.parameters(),

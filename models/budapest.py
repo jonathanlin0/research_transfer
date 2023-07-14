@@ -41,7 +41,8 @@ class budapest(pl.LightningModule):
     def __init__(self, 
         track_wandb: bool,
         lr: float,
-        num_classes: int):
+        num_classes: int,
+        dropout: float):
         super().__init__()
 
         # init a pretrained resnet
@@ -51,8 +52,10 @@ class budapest(pl.LightningModule):
         self.feature_extractor = nn.Sequential(*layers)
 
         num_target_classes = num_classes
-        self.dense = nn.Linear(num_filters, num_target_classes * 2)
+        self.dense = nn.Linear(num_filters, num_target_classes * 4)
+        self.dense2 = nn.Linear(num_target_classes * 4, num_target_classes * 2)
         self.classifier = nn.Linear(num_target_classes * 2, num_target_classes)
+        self.dropout = nn.Dropout(dropout)
 
         self.lr = lr
         self.track_wandb = track_wandb
@@ -67,7 +70,12 @@ class budapest(pl.LightningModule):
         self.feature_extractor.eval()
         with torch.no_grad():
             representations = self.feature_extractor(x).flatten(1)
-        x = self.dense(representations)
+        
+        x = self.dropout(representations)
+        x = self.dense(x)
+        x = self.dropout(x)
+        x = self.dense2(x)
+        x = self.dropout(x)
         x = self.classifier(x)
 
         return x
