@@ -3,6 +3,8 @@
 # training scripts for budapest
 python3 main.py --wandb on --model budapest --epochs 150 --batch_size 32 --num_classes 5
 python3 main.py --wandb on --model budapest --epochs 150 --batch_size 64 --num_classes 5
+python3 main.py --wandb on --model beijing --epochs 150 --batch_size 64 --blocks 2 --num_classes 5
+python3 main.py --wandb on --model beijing --epochs 150 --batch_size 64 --blocks 4 --num_classes 5
 # --------------------------------------------------------------------------------
 
 # training scripts for beijing on AK data
