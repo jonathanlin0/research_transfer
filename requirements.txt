@@ -26,3 +26,4 @@ scipy
 lightning[extra]
 transformers
 accelerate
+openpyxl
