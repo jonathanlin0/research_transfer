@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # training scripts for budapest
-python3 main.py --wandb on --model budapest --epochs 100 --batch_size 64 --num_classes 5
 python3 main.py --wandb on --model berlin --epochs 100 --batch_size 64 --blocks 2 --num_classes 5
 python3 main.py --wandb on --model berlin --epochs 100 --batch_size 64 --blocks 4 --num_classes 5
 # --------------------------------------------------------------------------------
