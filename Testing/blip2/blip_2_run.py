@@ -45,22 +45,23 @@ csv_path = cwd + "datasets/Animal_Kingdom/action_recognition/annotation/val.csv"
 df = pd.read_excel(f"{cwd}datasets/Animal_Kingdom/action_recognition/annotation/df_action.xlsx")
 landmarks_frame = pd.read_csv(csv_path, delimiter = " ")
 
+processor = Blip2Processor.from_pretrained("Salesforce/blip2-opt-2.7b")
+
 class clip2_baseline(pl.LightningModule):
     def __init__(self, num_classes):
         super().__init__()
 
         # frozen model
-        backbone = models.resnet50(weights="DEFAULT")
-        backbone.fc = nn.Sequential(
-            nn.Dropout(p = 0.2),
-            nn.Linear(backbone.fc.in_features, num_classes * 16)
-        )
-        self.backbone = backbone
+        # backbone = models.resnet50(weights="DEFAULT")
+        # backbone.fc = nn.Sequential(
+        #     nn.Dropout(p = 0.2),
+        #     nn.Linear(backbone.fc.in_features, num_classes * 16)
+        # )
+        self.backbone = processor
 
         # unfrozen model
         self.unfrozen = nn.Sequential(
-            nn.Dropout(p = 0.2),
-            nn.Linear(num_classes * 16, num_classes * 4),
+            nn.Linear(3 * 224 * 224, num_classes * 4),
             nn.Dropout(p = 0.2),
             nn.Linear(num_classes * 4, num_classes)
         )
@@ -68,9 +69,10 @@ class clip2_baseline(pl.LightningModule):
         self.sigm = nn.Sigmoid()
     
     def forward(self, x):
-        self.backbone.eval()
-        with torch.no_grad():
-            x = self.backbone(x)
+        # self.backbone.eval()
+        # with torch.no_grad():
+        x = self.backbone(images=x, return_tensors="pt").to(torch.float32)
+        x = x["pixel_values"].squeeze()
         return self.sigm(self.unfrozen(x))
         # return self.sigm(self.backbone(x))
     
@@ -81,7 +83,7 @@ class clip2_baseline(pl.LightningModule):
         # forward pass
         outputs = self(images)
         # loss = nn.BCEWithLogitsLoss()
-        loss = nn.BCEWithLogitsLoss()(outputs, labels.type(torch.float32))
+        loss = nn.BCELoss()(outputs, labels.type(torch.float32))
 
         print(loss)
         return {'loss':loss}
