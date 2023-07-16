@@ -2,9 +2,9 @@
 
 # set up python 3.8
 # good resource: https://www.itsupportwale.com/blog/how-to-upgrade-to-python-3-11-on-ubuntu-20-04-and-22-04-lts/
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt-get install python3.8
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
+# sudo add-apt-repository ppa:deadsnakes/ppa
+# sudo apt-get install python3.8
+# sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
 
 apt-get install python3-pip
 sudo apt-get install vim
@@ -13,14 +13,14 @@ pip3 install cython
 sudo apt-get install python3-dev
 
 # install anaconda to install numpy
-mkdir tmp
-cd tmp
-wget https://repo.anaconda.com/archive/Anaconda3-2023.07-0-Linux-x86_64.sh
-bash Anaconda3-2023.07-0-Linux-x86_64.sh
-cd
-source .bashrc
-cd research_transfer
-conda install -y -c conda-forge --file requirements.txt
+# mkdir tmp
+# cd tmp
+# wget https://repo.anaconda.com/archive/Anaconda3-2023.07-0-Linux-x86_64.sh
+# bash Anaconda3-2023.07-0-Linux-x86_64.sh
+# cd
+# source .bashrc
+# cd research_transfer
+# conda install -y -c conda-forge --file requirements.txt
 
 # pip3 install git+https://bitbucket.org/pypy/numpy.git
 

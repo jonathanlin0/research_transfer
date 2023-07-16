@@ -10,6 +10,7 @@ from typing import Any, Type
 import torch
 from torch import nn
 from torch.utils.data import TensorDataset, DataLoader
+from torchmetrics.classification import MultilabelF1Score
 
 import torchvision
 from torchvision import datasets
@@ -32,6 +33,7 @@ import os
 import sys
 import json
 
+
 cwd = os.path.dirname(os.path.realpath(__file__))
 cwd = cwd[0:cwd.rfind("/")]
 cwd = cwd[0:cwd.rfind("/") + 1]
@@ -52,49 +54,69 @@ class clip2_baseline(pl.LightningModule):
         super().__init__()
 
         # frozen model
-        # backbone = models.resnet50(weights="DEFAULT")
-        # backbone.fc = nn.Sequential(
-        #     nn.Dropout(p = 0.2),
-        #     nn.Linear(backbone.fc.in_features, num_classes * 16)
-        # )
-        self.backbone = processor
+        backbone = models.resnet50(weights="DEFAULT")
+        backbone.fc = nn.Sequential(
+            nn.Dropout(p = 0.2),
+            nn.Linear(backbone.fc.in_features, num_classes * 16)
+        )
+        self.backbone = backbone
 
         # unfrozen model
         self.unfrozen = nn.Sequential(
-            nn.Linear(3 * 224 * 224, num_classes * 4),
+            nn.Linear(num_classes * 16, num_classes * 4),
             nn.Dropout(p = 0.2),
             nn.Linear(num_classes * 4, num_classes)
         )
+        self.num_classes = num_classes
 
         self.sigm = nn.Sigmoid()
+
+        self.train_step_losses = []
+        self.validation_step_losses = []
+        self.train_step_f1 = []
+        self.validation_step_f1 = []
+        self.last_train_loss = 0
+        self.last_train_f1 = 0
     
     def forward(self, x):
-        # self.backbone.eval()
-        # with torch.no_grad():
-        x = self.backbone(images=x, return_tensors="pt").to(torch.float32)
-        x = x["pixel_values"].squeeze()
+        self.backbone.eval()
+        with torch.no_grad():
+            x = self.backbone(x)
         return self.sigm(self.unfrozen(x))
-        # return self.sigm(self.backbone(x))
+
+        # device = 'cuda' if torch.cuda.is_available() else 'cpu'
+        # if torch.backends.mps.is_available():
+        #     device = "mps"
+        
+        # x = self.backbone(images=x, return_tensors="pt").to(torch.float32).to(device)
+        # # print(x["pixel_values"].shape)
+        # x = x["pixel_values"].squeeze()
+        # torch.reshape(x, (1, 128 * 3 * 224 * 224))
+        # x = x.squeeze()
+        # print(x.device)
+        # return self.sigm(self.unfrozen(x))
     
     def training_step(self, batch, batch_idx):
         images, labels = batch
-        # images = images.reshape(-1, 32 * 32)
 
         # forward pass
         outputs = self(images)
-        # loss = nn.BCEWithLogitsLoss()
         loss = nn.BCELoss()(outputs, labels.type(torch.float32))
 
-        print(loss)
+        self.train_step_losses.append(loss)
+        F1 = MultilabelF1Score(task="multilabel", num_labels=46, average="macro")
+        print(F1(outputs, labels.type(torch.float32)))
+
         return {'loss':loss}
     
     def validation_step(self, batch, batch_idx):
         images, labels = batch
-        # images = images.reshape(-1, 32 * 32)
 
         # forward pass
         outputs = self(images)
-        loss = nn.BCEWithLogitsLoss()(outputs, labels.type(torch.float32))
+        loss = nn.BCELoss()(outputs, labels.type(torch.float32))
+
+        self.validation_step_losses.append(loss)
 
         return {'loss':loss}
 
@@ -108,6 +130,12 @@ class clip2_baseline(pl.LightningModule):
     def val_dataloader(self):
         train_loader, val_loader = dataloader.get_data()
         return val_loader
+
+    def on_train_epoch_end(self):
+        pass
+
+    def on_validation_epoch_end(self):
+        pass
     
 if __name__ == '__main__':
 
