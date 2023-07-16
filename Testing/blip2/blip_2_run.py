@@ -52,14 +52,26 @@ class clip2_baseline(pl.LightningModule):
         backbone = models.resnet50(weights="DEFAULT")
         backbone.fc = nn.Sequential(
             nn.Dropout(p = 0.2),
-            nn.Linear(backbone.fc.in_features, out_features=num_classes)
+            nn.Linear(backbone.fc.in_features, num_classes * 16)
         )
         self.backbone = backbone
+
+        # unfrozen model
+        self.unfrozen = nn.Sequential(
+            nn.Dropout(p = 0.2),
+            nn.Linear(num_classes * 16, num_classes * 4),
+            nn.Dropout(p = 0.2),
+            nn.Linear(num_classes * 4, num_classes)
+        )
 
         self.sigm = nn.Sigmoid()
     
     def forward(self, x):
-        return self.sigm(self.backbone(x))
+        self.backbone.eval()
+        with torch.no_grad():
+            x = self.backbone(x)
+        return self.sigm(self.unfrozen(x))
+        # return self.sigm(self.backbone(x))
     
     def training_step(self, batch, batch_idx):
         images, labels = batch

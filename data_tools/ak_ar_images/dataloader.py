@@ -68,7 +68,7 @@ class ak_ar_images_dataset(Dataset):
 # for i in range(len(val_dataset)):
 #     print(val_dataset[i][1])
 
-def get_data(batch_size=32, num_workers=8):
+def get_data(batch_size=128, num_workers=8):
     # cwd = "/home/jonathan/Desktop/Perona_Research"
     cwd = os.path.dirname(os.path.realpath(__file__))
     cwd = cwd[0:cwd.rfind("/")]
