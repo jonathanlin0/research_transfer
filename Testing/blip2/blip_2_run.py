@@ -63,6 +63,8 @@ class clip2_baseline(pl.LightningModule):
 
         # unfrozen model
         self.unfrozen = nn.Sequential(
+            nn.Linear(num_classes * 16, num_classes * 16),
+            nn.Dropout(p = 0.2),
             nn.Linear(num_classes * 16, num_classes * 4),
             nn.Dropout(p = 0.2),
             nn.Linear(num_classes * 4, num_classes)
@@ -104,8 +106,15 @@ class clip2_baseline(pl.LightningModule):
         loss = nn.BCELoss()(outputs, labels.type(torch.float32))
 
         self.train_step_losses.append(loss)
-        F1 = MultilabelF1Score(task="multilabel", num_labels=46, average="macro")
-        print(F1(outputs, labels.type(torch.float32)))
+
+        device = "cpu"
+        if torch.cuda.is_available():
+            device = "cuda"
+        if torch.backends.mps.is_available():
+            device = "mps"
+
+        F1 = MultilabelF1Score(num_labels=46, average="macro").to(device)
+        self.train_step_f1.append(F1(outputs, labels.type(torch.float32)).item() * 100)
 
         return {'loss':loss}
     
@@ -117,6 +126,15 @@ class clip2_baseline(pl.LightningModule):
         loss = nn.BCELoss()(outputs, labels.type(torch.float32))
 
         self.validation_step_losses.append(loss)
+
+        device = "cpu"
+        if torch.cuda.is_available():
+            device = "cuda"
+        if torch.backends.mps.is_available():
+            device = "mps"
+
+        F1 = MultilabelF1Score(num_labels=46, average="macro").to(device)
+        self.validation_step_f1.append(F1(outputs, labels.type(torch.float32)).item() * 100)
 
         return {'loss':loss}
 
@@ -132,10 +150,25 @@ class clip2_baseline(pl.LightningModule):
         return val_loader
 
     def on_train_epoch_end(self):
-        pass
+        self.last_train_loss = sum(self.train_step_losses) / len(self.train_step_losses)
+        self.last_train_f1 = sum(self.train_step_f1) / len(self.train_step_f1)
+
+        # clear memory
+        self.train_step_acc.clear()
+        self.train_step_losses.clear()
 
     def on_validation_epoch_end(self):
-        pass
+        validation_loss = sum(self.validation_step_losses) / len(self.validation_step_losses)
+        validation_f1 = sum(self.validation_step_f1) / len(self.validation_step_f1)
+
+        wandb.log({"training_loss":self.last_train_loss,
+                    "training_f1":self.last_train_f1,
+                    "validation_loss":validation_loss,
+                    "validation_f1":validation_f1})
+        
+        # clear memory
+        self.validation_step_losses.clear()
+        self.validation_step_f1.clear()
     
 if __name__ == '__main__':
 
@@ -143,7 +176,24 @@ if __name__ == '__main__':
     data = json.load(f)
     f.close()
 
-    epochs = 10
+    wandb.login()
+    wandb.init(
+        project="Perona_Research",
+        config={
+            "learning_rate":0.001,
+            "architecture":"blip2_testing",
+            "dataset":"ak_ar_image",
+            "epochs":50,
+            "optimizer":"adam",
+            "loss_fn":"BCELoss",
+            "dropout":0.2,
+            "batch_size":128
+        }
+    )
+
+    epochs = 50
     model = clip2_baseline(num_classes = len(data))
     trainer = Trainer(max_epochs = epochs, fast_dev_run=False)
     trainer.fit(model)
+
+    wandb.finish()

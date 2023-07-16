@@ -26,6 +26,8 @@ sudo apt-get install python3-dev
 
 pip3 install -r requirements.txt
 
+chmod +rwx ./train.sh
+
 # conda create --name j_research python=3.10 pip
 
 # # conda install --name j_research package
