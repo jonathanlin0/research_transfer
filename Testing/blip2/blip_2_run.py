@@ -154,7 +154,7 @@ class clip2_baseline(pl.LightningModule):
         self.last_train_f1 = sum(self.train_step_f1) / len(self.train_step_f1)
 
         # clear memory
-        self.train_step_acc.clear()
+        self.last_train_f1.clear()
         self.train_step_losses.clear()
 
     def on_validation_epoch_end(self):
