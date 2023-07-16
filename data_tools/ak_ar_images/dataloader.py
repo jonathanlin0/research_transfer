@@ -18,6 +18,7 @@ class ak_ar_images_dataset(Dataset):
         self.root_dir = root_dir
         self.transform = transform
         self.total_classes = total_classes
+        
 
     def __len__(self):
         return len(self.landmarks_frame)
@@ -75,10 +76,14 @@ def get_data(batch_size=128, num_workers=8):
     cwd = cwd[0:cwd.rfind("/") + 1]
     # set the root directory of the project to 2 layers above the current dataloader
 
+    f = open("data_tools/ak_ar_images/converted.json", "r")
+    data = json.load(f)
+    f.close()
+
     train_dataset = ak_ar_images_dataset(
         csv_file = cwd + "data_tools/ak_ar_images/train.csv",
         root_dir = cwd + "datasets/Animal_Kingdom/action_recognition/dataset/image/",
-        total_classes = 139,
+        total_classes = len(data),
         transform=torchvision.transforms.Compose([
                         #  transforms.RandomHorizontalFlip(),
                         #  transforms.RandAugment(),
@@ -89,7 +94,7 @@ def get_data(batch_size=128, num_workers=8):
     val_dataset = ak_ar_images_dataset(
         csv_file = cwd + "data_tools/ak_ar_images/val.csv",
         root_dir = cwd + "datasets/Animal_Kingdom/action_recognition/dataset/image/",
-        total_classes = 139,
+        total_classes = len(data),
         transform=torchvision.transforms.Compose([
                         #  transforms.RandomHorizontalFlip(),
                         #  transforms.RandAugment(),

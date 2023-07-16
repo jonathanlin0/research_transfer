@@ -30,6 +30,7 @@ from torch.nn import functional as F
 import torchvision.models as models
 import os
 import sys
+import json
 
 cwd = os.path.dirname(os.path.realpath(__file__))
 cwd = cwd[0:cwd.rfind("/")]
@@ -107,7 +108,12 @@ class clip2_baseline(pl.LightningModule):
         return val_loader
     
 if __name__ == '__main__':
+
+    f = open("data_tools/ak_ar_images/converted.json", "r")
+    data = json.load(f)
+    f.close()
+
     epochs = 10
-    model = clip2_baseline(num_classes = 139)
+    model = clip2_baseline(num_classes = len(data))
     trainer = Trainer(max_epochs = epochs, fast_dev_run=False)
     trainer.fit(model)
