@@ -76,7 +76,7 @@ def get_data(batch_size=128, num_workers=8):
     cwd = cwd[0:cwd.rfind("/") + 1]
     # set the root directory of the project to 2 layers above the current dataloader
 
-    f = open("data_tools/ak_ar_images/converted.json", "r")
+    f = open(cwd + "data_tools/ak_ar_images/converted.json", "r")
     data = json.load(f)
     f.close()
 
