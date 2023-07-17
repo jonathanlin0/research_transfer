@@ -202,8 +202,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '-l', '--threshold', default='0.5',
         type = float,
-        help='set the treshold of a positive prediction',
-        choices=[0.1, 0.01, 0.001]
+        help='set the treshold of a positive prediction'
     )
     args = vars(parser.parse_args())
 

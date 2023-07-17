@@ -1,8 +1,11 @@
 #!/bin/bash
 
+python3 Testing/blip2/blip_2_run.py --threshold 0.5
+python3 Testing/blip2/blip_2_run.py --threshold 0.7
+
 # training scripts for budapest
-python3 main.py --wandb on --model berlin --epochs 100 --batch_size 64 --blocks 2 --num_classes 5
-python3 main.py --wandb on --model berlin --epochs 100 --batch_size 64 --blocks 4 --num_classes 5
+# python3 main.py --wandb on --model berlin --epochs 100 --batch_size 64 --blocks 2 --num_classes 5
+# python3 main.py --wandb on --model berlin --epochs 100 --batch_size 64 --blocks 4 --num_classes 5
 # --------------------------------------------------------------------------------
 
 # training scripts for beijing on AK data
