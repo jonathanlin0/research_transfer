@@ -1,5 +1,5 @@
-cwd = "/Users/jonathanlin/Documents/GitHub/research_transfer/"
-csv_path = cwd + "datasets/Animal_Kingdom/action_recognition/annotation/val.csv"
+# cwd = "/Users/jonathanlin/Documents/GitHub/research_transfer/"
+# csv_path = cwd + "datasets/Animal_Kingdom/action_recognition/annotation/val.csv"
 
 import pandas as pd
 import PIL
@@ -34,12 +34,14 @@ import torchvision.models as models
 import os
 import sys
 import json
-sys.path.append("/Users/jonathanlin/Documents/GitHub/research_transfer")
+cwd = os.path.dirname(os.path.realpath(__file__))
+cwd = cwd[0:cwd.rfind("/")]
+cwd = cwd[0:cwd.rfind("/") + 1]
+
+sys.path.append(cwd)
 from data_tools import ak_ar_images
 from data_tools.ak_ar_images import dataloader
 
-df = pd.read_excel("/Users/jonathanlin/Documents/GitHub/research_transfer/datasets/Animal_Kingdom/action_recognition/annotation/df_action.xlsx")
-landmarks_frame = pd.read_csv(csv_path, delimiter = " ")
 
 processor = Blip2Processor.from_pretrained("Salesforce/blip2-opt-2.7b")
 # caption_model = Blip2ForConditionalGeneration.from_pretrained(
