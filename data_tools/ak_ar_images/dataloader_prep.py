@@ -4,7 +4,7 @@ from tqdm import tqdm
 import json
 
 SEGMENTS = ["head", "middle"]
-MAX_FRAMES_FROM_VID = 50
+MAX_FRAMES_FROM_VID = 25
 
 annotation_dir = "datasets/Animal_Kingdom/action_recognition/annotation"
 img_dir = "datasets/Animal_Kingdom/action_recognition/dataset/image"
