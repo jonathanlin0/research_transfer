@@ -49,7 +49,7 @@ processor = Blip2Processor.from_pretrained("Salesforce/blip2-opt-2.7b")
 # )
 
 class clip2_baseline(pl.LightningModule):
-    def __init__(self, num_classes):
+    def __init__(self, num_classes=46):
         super().__init__()
 
         # frozen model

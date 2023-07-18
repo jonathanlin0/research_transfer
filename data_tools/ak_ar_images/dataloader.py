@@ -34,7 +34,7 @@ class ak_ar_images_dataset(Dataset):
         
         label = self.landmarks_frame.iloc[idx, 1].split(",")
         converted = [eval(i) for i in label]
-        # conver the list of indexes to a tensor of shape (total_classes) where the indexes are 1 (that are in converted car) and the rest are 0 in the tensor
+        # convert the list of indexes to a tensor of shape (total_classes) where the indexes are 1 (that are in converted car) and the rest are 0 in the tensor
         new_tensor = [0.0] * self.total_classes
         for index in converted:
             new_tensor[index] = 1.0
@@ -47,7 +47,7 @@ class ak_ar_images_dataset(Dataset):
         if self.transform is not None:
             image = self.transform(image)
 
-        image = np.reshape(image, (3, 360, 640))
+        image = np.reshape(image, (3, 224, 224))
         image = image.to(torch.float32)
 
         return (image, label)
@@ -85,9 +85,10 @@ def get_data(batch_size=128, num_workers=8):
         root_dir = cwd + "datasets/Animal_Kingdom/action_recognition/dataset/image/",
         total_classes = len(data),
         transform=torchvision.transforms.Compose([
-                        #  transforms.RandomHorizontalFlip(),
-                        #  transforms.RandAugment(),
-                         transforms.ToTensor()
+                        transforms.RandomHorizontalFlip(),
+                        transforms.Resize((224, 224)),
+                        transforms.RandAugment(),
+                        transforms.ToTensor()
                      ])
     )
 
@@ -98,7 +99,8 @@ def get_data(batch_size=128, num_workers=8):
         transform=torchvision.transforms.Compose([
                         #  transforms.RandomHorizontalFlip(),
                         #  transforms.RandAugment(),
-                         transforms.ToTensor()
+                        transforms.Resize((224, 224)),
+                        transforms.ToTensor()
                      ])
     )
 
