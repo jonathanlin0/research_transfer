@@ -34,8 +34,6 @@ import sys
 import json
 import argparse
 
-
-
 cwd = os.path.dirname(os.path.realpath(__file__))
 cwd = cwd[0:cwd.rfind("/")]
 cwd = cwd[0:cwd.rfind("/") + 1]
