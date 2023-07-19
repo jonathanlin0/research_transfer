@@ -49,7 +49,7 @@ processor = Blip2Processor.from_pretrained("Salesforce/blip2-opt-2.7b")
 # )
 
 class clip2_baseline(pl.LightningModule):
-    def __init__(self, num_classes=46):
+    def __init__(self, num_classes=46, processor_width=224, processor_height=224, processor_color_channels=3):
         super().__init__()
 
         # frozen model
@@ -57,7 +57,7 @@ class clip2_baseline(pl.LightningModule):
 
         # unfrozen model
         self.unfrozen = nn.Sequential(
-            nn.Linear(3 * 224 * 224, num_classes * 4),
+            nn.Linear(processor_color_channels * processor_height * processor_width, num_classes * 4),
             nn.Dropout(p = 0.2),
             nn.Linear(num_classes * 4, num_classes)
         )

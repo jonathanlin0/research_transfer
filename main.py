@@ -165,25 +165,42 @@ if __name__ == '__main__':
     loss_fn = nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(params=model.parameters(),
                                 lr=learning_rate)
+    
+    # all gathered stats
+    all_stats = {
+        "learning_rate":learning_rate,
+        "architecture":model_name,
+        "dataset":dataset,
+        "epochs":epochs,
+        "optimizer":optimizer.__class__.__name__,
+        "loss_fn":loss_fn.__class__.__name__,
+        "blocks":num_blocks,
+        "activation": args["activation"],
+        "dropout":dropout,
+        "batch_size":batch_size
+    }
+
+    # model_config_key holds all the relevant config settings for each model
+    model_config_key = {
+        "beijing": ["learning_rate", "architecture", "dataset", "epochs", "optimizer", "loss_fn", "blocks", "activation", "dropout", "batch_size"],
+        "berlin": ["learning_rate", "architecture", "dataset", "epochs", "optimizer", "loss_fn", "blocks", "activation", "dropout", "batch_size"],
+        "berlin": ["learning_rate", "architecture", "dataset", "epochs", "optimizer", "loss_fn", "dropout", "batch_size"]
+    }
+
+    config = {}
+
+    # grab the appropriate settings to be logged
+    for key in model_config_key[model_name]:
+        config[key] = all_stats[key]
+    
 
     if track_wandb:
         wandb.login()
         wandb.init(
             project="Perona_Research",
-
-            config={
-                "learning_rate":learning_rate,
-                "architecture":model_name,
-                "dataset":dataset,
-                "epochs":epochs,
-                "optimizer":optimizer.__class__.__name__,
-                "loss_fn":loss_fn.__class__.__name__,
-                "blocks":num_blocks,
-                "activation": args["activation"],
-                "dropout":dropout,
-                "batch_size":batch_size
-            }
+            config=config
         )
+
     train_loader, valid_loader = None, None
     if dataset == "CIFAR10":
         train_loader, valid_loader = get_data.get_data()
