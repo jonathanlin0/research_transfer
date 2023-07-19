@@ -6,11 +6,11 @@
 # sudo apt-get install python3.8
 # sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
 
-apt-get install python3-pip
-sudo apt-get install vim
+apt-get -y install python3-pip
+sudo apt-get -y install vim
 
-pip3 install cython
-sudo apt-get install python3-dev
+pip3 --yes install cython
+sudo apt-get -y install python3-dev
 
 # install anaconda to install numpy
 # mkdir tmp
