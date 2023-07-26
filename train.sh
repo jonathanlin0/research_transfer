@@ -24,3 +24,9 @@ python3 Testing/blip2/blip_2_run.py --threshold 0.7
 # extract the action from the blip2 output sentence
 # add small multilayer NN to end of blip2/clip output as classifier
 # fine tune blip2/clip on video grounding then do process above
+
+# measure accuracy of blip2
+# prompt is "x animal doing x action"
+# test different granualirities (so change animal to species to parent species to eventually just "animal")
+# measure using cosine function
+# take top result and it's +1 if it's in one of the listed actions in AK

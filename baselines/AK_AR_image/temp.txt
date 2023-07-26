@@ -1,0 +1,3072 @@
+sensing
+attending
+a primate is keeping still
+
+attending
+a primate is keeping still
+
+attending
+a primate is keeping still
+
+attending
+a primate is keeping still
+
+attending
+a primate is keeping still
+
+attending
+a primate is keeping still
+
+attending
+a primate is keeping still
+
+attending
+a primate is keeping still
+
+attending
+a primate is keeping still
+
+attending
+a primate is keeping still
+
+attending
+a primate is keeping still
+
+attending
+a primate is keeping still
+
+attending
+a primate is keeping still
+
+attending
+a primate is keeping still
+
+eating
+walking
+sensing
+a water fowl is eating
+
+eating
+walking
+sensing
+a primate is eating
+
+eating
+walking
+sensing
+a primate is eating
+
+eating
+walking
+sensing
+a water fowl is eating
+
+eating
+walking
+sensing
+a water fowl is eating
+
+eating
+walking
+sensing
+a water fowl is eating
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+lying on its side
+a water fowl is eating
+
+keeping still
+lying on its side
+a water fowl is eating
+
+keeping still
+lying on its side
+a primate is swimming
+
+keeping still
+lying on its side
+a primate is swimming
+
+keeping still
+lying on its side
+a primate is swimming
+
+keeping still
+lying on its side
+a water fowl is eating
+
+keeping still
+lying on its side
+a lizard is swimming
+
+keeping still
+lying on its side
+a lizard is swimming
+
+keeping still
+lying on its side
+a lizard is swimming
+
+keeping still
+lying on its side
+a lizard is swimming
+
+keeping still
+lying on its side
+a lizard is swimming
+
+walking
+sensing
+a primate is eating
+
+walking
+sensing
+a lizard is moving
+
+walking
+sensing
+a lizard is moving
+
+walking
+sensing
+a lizard is moving
+
+walking
+sensing
+a lizard is moving
+
+walking
+sensing
+a lizard is moving
+
+walking
+sensing
+a lizard is moving
+
+walking
+sensing
+a lizard is moving
+
+walking
+sensing
+a lizard is moving
+
+walking
+sensing
+a lizard is moving
+
+walking
+sensing
+a lizard is moving
+
+walking
+sensing
+a lizard is moving
+
+walking
+sensing
+a primate is eating
+
+walking
+sensing
+a lizard is eating
+
+walking
+sensing
+a lizard is moving
+
+walking
+sensing
+a lizard is moving
+
+walking
+sensing
+a lizard is eating
+
+walking
+sensing
+a lizard is eating
+
+walking
+sensing
+a primate is eating
+
+walking
+sensing
+a lizard is eating
+
+walking
+sensing
+a lizard is eating
+
+walking
+sensing
+a lizard is eating
+
+walking
+sensing
+a primate is eating
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+sensing
+a primate is eating
+
+keeping still
+sensing
+exploring
+a primate is sensing
+
+attending
+diving
+a lizard is swimming
+
+attending
+diving
+a lizard is swimming
+
+attending
+diving
+a lizard is swimming
+
+attending
+diving
+a lizard is swimming
+
+attending
+diving
+a lizard is swimming
+
+attending
+diving
+a lizard is swimming
+
+attending
+diving
+a lizard is swimming
+
+attending
+diving
+a lizard is swimming
+
+attending
+diving
+a lizard is swimming
+
+attending
+diving
+a lizard is swimming
+
+keeping still
+walking
+a water fowl is moving
+
+keeping still
+walking
+a water fowl is moving
+
+keeping still
+walking
+a water fowl is moving
+
+keeping still
+walking
+a water fowl is moving
+
+keeping still
+walking
+a water fowl is moving
+
+keeping still
+walking
+a primate is eating
+
+swimming
+a lizard is swimming
+
+swimming
+a lizard is swimming
+
+swimming
+a lizard is swimming
+
+swimming
+a lizard is swimming
+
+swimming
+a primate is swimming
+
+swimming
+a primate is swimming
+
+swimming
+a primate is swimming
+
+swimming
+a primate is swimming
+
+swimming
+a primate is swimming
+
+swimming
+a primate is swimming
+
+swimming
+a primate is swimming
+
+swimming
+a lizard is swimming
+
+swimming
+a lizard is swimming
+
+swimming
+a lizard is swimming
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is sensing
+
+keeping still
+a primate is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a primate is sensing
+
+keeping still
+a primate is sensing
+
+keeping still
+a primate is sensing
+
+walking
+sensing
+a primate is eating
+
+walking
+sensing
+a primate is keeping still
+
+grooming
+keeping still
+manipulating object
+a primate is eating
+
+grooming
+keeping still
+manipulating object
+a primate is eating
+
+grooming
+keeping still
+manipulating object
+a primate is eating
+
+grooming
+keeping still
+manipulating object
+a primate is eating
+
+grooming
+keeping still
+manipulating object
+a primate is eating
+
+grooming
+keeping still
+manipulating object
+a primate is sensing
+
+manipulating object
+sensing
+carrying
+a primate is eating
+
+manipulating object
+sensing
+carrying
+a primate is eating
+
+manipulating object
+sensing
+carrying
+a primate is eating
+
+manipulating object
+sensing
+carrying
+a primate is moving
+
+manipulating object
+sensing
+carrying
+a primate is eating
+
+manipulating object
+sensing
+carrying
+a primate is eating
+
+eating
+a lizard is eating
+
+eating
+a lizard is eating
+
+eating
+a lizard is eating
+
+eating
+a lizard is eating
+
+eating
+a lizard is eating
+
+eating
+a lizard is eating
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is eating
+
+eating
+a lizard is swimming
+
+eating
+a lizard is eating
+
+eating
+a lizard is eating
+
+eating
+a lizard is swimming
+
+eating
+a lizard is eating
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is swimming
+
+sensing
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+sensing
+a primate is sensing
+
+sensing
+a primate is sensing
+
+sensing
+a primate is sensing
+
+sensing
+a primate is sensing
+
+sensing
+a primate is sensing
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+sensing
+a lizard is swimming
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+sensing
+a lizard is swimming
+
+keeping still
+sensing
+a lizard is swimming
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+running
+a lizard is swimming
+
+keeping still
+running
+a lizard is swimming
+
+keeping still
+running
+a lizard is swimming
+
+keeping still
+running
+a lizard is swimming
+
+keeping still
+running
+a lizard is swimming
+
+keeping still
+running
+a lizard is moving
+
+keeping still
+running
+a lizard is sensing
+
+keeping still
+running
+a lizard is swimming
+
+keeping still
+running
+a lizard is moving
+
+keeping still
+running
+a lizard is swimming
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is eating
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+keeping still
+a primate is eating
+
+keeping still
+a primate is eating
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a primate is eating
+
+keeping still
+a primate is eating
+
+keeping still
+a primate is eating
+
+keeping still
+a primate is eating
+
+keeping still
+a primate is eating
+
+keeping still
+a primate is eating
+
+keeping still
+a lizard is sensing
+
+eating
+a lizard is sensing
+
+eating
+a lizard is sensing
+
+eating
+a lizard is sensing
+
+eating
+a lizard is sensing
+
+eating
+a lizard is sensing
+
+eating
+a lizard is sensing
+
+eating
+a lizard is moving
+
+eating
+a lizard is moving
+
+eating
+a lizard is moving
+
+eating
+a primate is sensing
+
+eating
+a lizard is moving
+
+eating
+a lizard is moving
+
+eating
+a lizard is moving
+
+eating
+a lizard is moving
+
+eating
+a primate is eating
+
+eating
+a primate is eating
+
+eating
+a primate is eating
+
+eating
+a primate is eating
+
+eating
+a primate is eating
+
+eating
+a primate is eating
+
+eating
+a primate is eating
+
+eating
+a lizard is sensing
+
+eating
+a primate is eating
+
+eating
+a lizard is sensing
+
+eating
+a primate is eating
+
+sensing
+a lizard is eating
+
+sensing
+a lizard is eating
+
+sensing
+a primate is eating
+
+sensing
+a lizard is eating
+
+sensing
+a lizard is eating
+
+sensing
+a primate is eating
+
+sensing
+a lizard is eating
+
+sensing
+a primate is eating
+
+sensing
+a primate is eating
+
+sensing
+a lizard is eating
+
+sensing
+a primate is swimming
+
+sensing
+a primate is swimming
+
+sensing
+a primate is swimming
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is swimming
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is swimming
+
+keeping still
+a lizard is swimming
+
+keeping still
+a lizard is swimming
+
+keeping still
+a lizard is swimming
+
+keeping still
+a lizard is swimming
+
+keeping still
+a lizard is swimming
+
+keeping still
+a lizard is swimming
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is swimming
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+attending
+sensing
+a lizard is sensing
+
+attending
+sensing
+a lizard is sensing
+
+keeping still
+performing allo-preening
+sensing
+a primate is eating
+
+keeping still
+performing allo-preening
+sensing
+a primate is eating
+
+keeping still
+performing allo-preening
+sensing
+a primate is eating
+
+keeping still
+performing allo-preening
+sensing
+a primate is eating
+
+keeping still
+performing allo-preening
+sensing
+a primate is eating
+
+keeping still
+performing allo-preening
+sensing
+a primate is eating
+
+keeping still
+a primate is swimming
+
+keeping still
+a primate is swimming
+
+keeping still
+a primate is eating
+
+keeping still
+a primate is swimming
+
+keeping still
+a primate is swimming
+
+eating
+walking
+a primate is sensing
+
+eating
+walking
+a primate is sensing
+
+eating
+walking
+a primate is sensing
+
+eating
+walking
+a primate is sensing
+
+eating
+a primate is moving
+
+eating
+a primate is moving
+
+eating
+a primate is moving
+
+eating
+a primate is moving
+
+eating
+a primate is moving
+
+eating
+a primate is moving
+
+attending
+sensing
+a lizard is swimming
+
+attending
+sensing
+a lizard is swimming
+
+attending
+sensing
+a lizard is swimming
+
+attending
+sensing
+a lizard is swimming
+
+attending
+sensing
+a lizard is swimming
+
+attending
+sensing
+a lizard is swimming
+
+attending
+sensing
+a lizard is swimming
+
+attending
+sensing
+a lizard is swimming
+
+attending
+sensing
+a lizard is swimming
+
+attending
+sensing
+a lizard is swimming
+
+attending
+sensing
+a lizard is swimming
+
+attending
+sensing
+a lizard is swimming
+
+attending
+sensing
+a lizard is swimming
+
+attending
+sensing
+a lizard is swimming
+
+attending
+a lizard is keeping still
+
+attending
+a lizard is sensing
+
+attending
+a lizard is keeping still
+
+attending
+a lizard is keeping still
+
+attending
+a lizard is keeping still
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+eating
+a lizard is moving
+
+eating
+a lizard is moving
+
+eating
+a lizard is moving
+
+eating
+a lizard is moving
+
+eating
+a lizard is moving
+
+eating
+a lizard is moving
+
+eating
+a lizard is moving
+
+eating
+a lizard is moving
+
+eating
+a lizard is moving
+
+eating
+a lizard is moving
+
+eating
+a lizard is moving
+
+sensing
+a primate is sensing
+
+sensing
+a primate is eating
+
+sensing
+a primate is moving
+
+sensing
+a primate is sensing
+
+sensing
+a primate is sensing
+
+eating
+a primate is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a primate is swimming
+
+eating
+a primate is swimming
+
+eating
+a primate is swimming
+
+eating
+a lizard is swimming
+
+eating
+a primate is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+keeping still
+walking
+a lizard is moving
+
+keeping still
+walking
+a lizard is moving
+
+keeping still
+walking
+a primate is eating
+
+keeping still
+walking
+a primate is moving
+
+keeping still
+walking
+a primate is moving
+
+keeping still
+walking
+a lizard is moving
+
+keeping still
+walking
+sensing
+a lizard is swimming
+
+keeping still
+walking
+sensing
+a lizard is swimming
+
+keeping still
+walking
+sensing
+a lizard is moving
+
+keeping still
+walking
+sensing
+a lizard is moving
+
+keeping still
+walking
+sensing
+a lizard is moving
+
+keeping still
+walking
+sensing
+a lizard is moving
+
+keeping still
+walking
+sensing
+a lizard is moving
+
+keeping still
+walking
+sensing
+a lizard is moving
+
+keeping still
+walking
+sensing
+a lizard is swimming
+
+keeping still
+walking
+sensing
+a lizard is swimming
+
+keeping still
+walking
+sensing
+a lizard is swimming
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is keeping still
+
+keeping still
+a lizard is keeping still
+
+keeping still
+a lizard is keeping still
+
+keeping still
+a lizard is keeping still
+
+keeping still
+a lizard is swimming
+
+keeping still
+a lizard is swimming
+
+keeping still
+a lizard is swimming
+
+keeping still
+a lizard is swimming
+
+keeping still
+a lizard is swimming
+
+keeping still
+a lizard is swimming
+
+keeping still
+a lizard is swimming
+
+keeping still
+walking
+a lizard is swimming
+
+keeping still
+walking
+a primate is swimming
+
+keeping still
+walking
+a primate is swimming
+
+keeping still
+walking
+a primate is swimming
+
+keeping still
+walking
+a primate is swimming
+
+keeping still
+walking
+a primate is swimming
+
+keeping still
+walking
+a primate is swimming
+
+keeping still
+walking
+a primate is swimming
+
+keeping still
+walking
+a lizard is swimming
+
+keeping still
+walking
+a lizard is swimming
+
+keeping still
+walking
+a lizard is swimming
+
+keeping still
+walking
+a primate is swimming
+
+keeping still
+walking
+a lizard is swimming
+
+keeping still
+walking
+a primate is swimming
+
+moving
+hugging
+a primate is eating
+
+moving
+hugging
+a primate is eating
+
+moving
+hugging
+a primate is eating
+
+moving
+hugging
+a primate is eating
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is swimming
+
+keeping still
+a lizard is swimming
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+sensing
+a primate is eating
+
+sensing
+a primate is eating
+
+sensing
+a primate is eating
+
+sensing
+a primate is eating
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+sensing
+a lizard is sensing
+
+manipulating object
+sensing
+a primate is sensing
+
+manipulating object
+sensing
+a primate is sensing
+
+manipulating object
+sensing
+a primate is sensing
+
+manipulating object
+sensing
+a primate is attending
+
+manipulating object
+sensing
+a primate is eating
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+attending
+licking
+a lizard is keeping still
+
+attending
+licking
+a lizard is sensing
+
+attending
+licking
+a lizard is sensing
+
+attending
+licking
+a lizard is keeping still
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+sensing
+a lizard is moving
+
+keeping still
+sensing
+a lizard is moving
+
+sensing
+a primate is eating
+
+sensing
+a primate is eating
+
+sensing
+a primate is eating
+
+sensing
+a primate is eating
+
+sensing
+a primate is eating
+
+keeping still
+walking
+a lizard is eating
+
+keeping still
+walking
+a lizard is eating
+
+keeping still
+walking
+a lizard is eating
+
+keeping still
+walking
+a lizard is eating
+
+keeping still
+walking
+a lizard is eating
+
+keeping still
+walking
+a lizard is eating
+
+keeping still
+walking
+a lizard is eating
+
+keeping still
+walking
+a lizard is eating
+
+keeping still
+walking
+a lizard is eating
+
+keeping still
+walking
+a lizard is eating
+
+keeping still
+walking
+a lizard is eating
+
+keeping still
+performing allo-preening
+a primate is sensing
+
+keeping still
+performing allo-preening
+a primate is eating
+
+keeping still
+performing allo-preening
+a primate is eating
+
+keeping still
+performing allo-preening
+a primate is sensing
+
+keeping still
+performing allo-preening
+a primate is sensing
+
+keeping still
+walking
+a water fowl is swimming
+
+keeping still
+walking
+a water fowl is swimming
+
+keeping still
+walking
+a water fowl is swimming
+
+keeping still
+walking
+a water fowl is swimming
+
+keeping still
+walking
+a water fowl is swimming
+
+keeping still
+walking
+a water fowl is swimming
+
+keeping still
+walking
+a water fowl is swimming
+
+keeping still
+walking
+a primate is swimming
+
+keeping still
+walking
+a water fowl is swimming
+
+keeping still
+walking
+a primate is swimming
+
+keeping still
+walking
+a water fowl is eating
+
+keeping still
+walking
+a water fowl is eating
+
+keeping still
+walking
+a primate is swimming
+
+keeping still
+walking
+a water fowl is eating
+
+keeping still
+a lizard is eating
+
+keeping still
+a primate is swimming
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is eating
+
+keeping still
+a primate is swimming
+
+keeping still
+a primate is swimming
+
+keeping still
+a primate is swimming
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is moving
+
+keeping still
+a primate is swimming
+
+keeping still
+a primate is swimming
+
+keeping still
+a lizard is moving
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is eating
+
+keeping still
+a lizard is eating
+
+keeping still
+a primate is sensing
+
+keeping still
+a primate is sensing
+
+keeping still
+a primate is sensing
+
+keeping still
+a primate is sensing
+
+keeping still
+a primate is sensing
+
+keeping still
+a primate is sensing
+
+keeping still
+a primate is sensing
+
+keeping still
+a primate is sensing
+
+keeping still
+a primate is sensing
+
+keeping still
+a primate is sensing
+
+keeping still
+a primate is sensing
+
+keeping still
+a primate is sensing
+
+keeping still
+a primate is sensing
+
+sensing
+a primate is moving
+
+sensing
+a primate is swimming
+
+sensing
+a primate is moving
+
+sensing
+a primate is swimming
+
+sensing
+a primate is swimming
+
+sensing
+a primate is moving
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is moving
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+attending
+a lizard is swimming
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+keeping still
+a lizard is keeping still
+
+keeping still
+a lizard is keeping still
+
+keeping still
+a lizard is keeping still
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a primate is sensing
+
+keeping still
+a primate is sensing
+
+keeping still
+a primate is sensing
+
+keeping still
+a primate is sensing
+
+keeping still
+a primate is eating
+
+sensing
+a lizard is eating
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a water fowl is eating
+
+sensing
+a water fowl is eating
+
+attending
+keeping still
+walking
+performing allo-preening
+a primate is keeping still
+
+attending
+keeping still
+walking
+performing allo-preening
+a primate is keeping still
+
+attending
+keeping still
+walking
+performing allo-preening
+a primate is keeping still
+
+keeping still
+jumping
+a lizard is swimming
+
+keeping still
+jumping
+a lizard is swimming
+
+keeping still
+jumping
+a lizard is swimming
+
+keeping still
+jumping
+a lizard is swimming
+
+keeping still
+jumping
+a lizard is swimming
+
+keeping still
+jumping
+a lizard is swimming
+
+keeping still
+jumping
+a lizard is swimming
+
+keeping still
+jumping
+a lizard is swimming
+
+keeping still
+jumping
+a lizard is swimming
+
+keeping still
+jumping
+a lizard is swimming
+
+keeping still
+jumping
+a lizard is swimming
+
+keeping still
+jumping
+a lizard is swimming
+
+keeping still
+jumping
+a lizard is swimming
+
+keeping still
+jumping
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+eating
+a lizard is swimming
+
+attending
+a lizard is moving
+
+attending
+a lizard is moving
+
+attending
+a lizard is moving
+
+attending
+a lizard is moving
+
+attending
+a lizard is moving
+
+attending
+a lizard is moving
+
+attending
+a lizard is moving
+
+attending
+a lizard is moving
+
+attending
+a lizard is moving
+
+attending
+a lizard is moving
+
+attending
+a lizard is moving
+
+attending
+a lizard is moving
+
+attending
+a lizard is moving
+
+eating
+a primate is sensing
+
+eating
+a primate is sensing
+
+eating
+a primate is sensing
+
+eating
+a primate is sensing
+
+eating
+a primate is sensing
+
+eating
+a primate is sensing
+
+eating
+a primate is sensing
+
+eating
+a primate is sensing
+
+eating
+a primate is sensing
+
+eating
+a primate is sensing
+
+eating
+a primate is sensing
+
+keeping still
+walking
+a lizard is sensing
+
+keeping still
+walking
+a lizard is sensing
+
+keeping still
+walking
+a lizard is moving
+
+keeping still
+walking
+a lizard is moving
+
+keeping still
+walking
+a lizard is moving
+
+keeping still
+walking
+a lizard is moving
+
+keeping still
+walking
+a lizard is moving
+
+keeping still
+walking
+a lizard is sensing
+
+keeping still
+walking
+a lizard is moving
+
+keeping still
+walking
+a lizard is moving
+
+keeping still
+walking
+a lizard is sensing
+
+keeping still
+walking
+a lizard is sensing
+
+keeping still
+shaking
+a primate is moving
+
+keeping still
+shaking
+a primate is eating
+
+keeping still
+shaking
+a primate is eating
+
+keeping still
+shaking
+a primate is moving
+
+keeping still
+shaking
+a primate is moving
+
+keeping still
+shaking
+a primate is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+attending
+a lizard is sensing
+
+keeping still
+a lizard is keeping still
+
+keeping still
+a lizard is keeping still
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+sensing
+a primate is eating
+
+sensing
+a primate is eating
+
+sensing
+a primate is eating
+
+sensing
+a primate is eating
+
+sensing
+a primate is eating
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is keeping still
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+keeping still
+a lizard is sensing
+
+walking
+sensing
+a primate is sensing
+
+walking
+sensing
+a primate is attending
+
+walking
+sensing
+a primate is attending
+
+walking
+sensing
+a primate is attending
+
+walking
+sensing
+a primate is sensing
+
+walking
+sensing
+a primate is sensing
+
+attending
+a lizard is eating
+
+attending
+a water fowl is eating
+
+attending
+a water fowl is eating
+
+attending
+a water fowl is eating
+
+attending
+a water fowl is eating
+
+attending
+a lizard is eating
+
+attending
+a lizard is eating
+
+attending
+a lizard is eating
+
+attending
+a lizard is eating
+
+attending
+a lizard is eating
+
+attending
+a lizard is eating
+
+attending
+a lizard is eating
+
+attending
+a lizard is eating
+
+attending
+a lizard is eating
+
+keeping still
+a primate is sensing
+
+keeping still
+a lizard is keeping still
+
+keeping still
+a lizard is keeping still
+
+keeping still
+a lizard is keeping still
+
+keeping still
+a lizard is keeping still
+
+keeping still
+walking
+sensing
+a primate is swimming
+
+keeping still
+walking
+sensing
+a primate is swimming
+
+keeping still
+walking
+sensing
+a primate is swimming
+
+keeping still
+walking
+sensing
+a primate is swimming
+
+keeping still
+walking
+sensing
+a primate is swimming
+
+keeping still
+walking
+sensing
+a primate is swimming
+
+sitting
+keeping still
+sensing
+a primate is attending
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is swimming
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is swimming
+
+sensing
+a lizard is swimming
+
+sensing
+a lizard is swimming
+
+sensing
+a lizard is swimming
+
+sensing
+a lizard is swimming
+
+sensing
+a lizard is moving
+
+sensing
+a lizard is moving
+
+attending
+a primate is moving
+
+attending
+a primate is eating
+
+eating
+a primate is swimming
+
+eating
+a primate is swimming
+
+eating
+a primate is swimming
+
+eating
+a primate is swimming
+
+eating
+a primate is swimming
+
+keeping still
+walking
+exploring
+a primate is eating
+
+keeping still
+walking
+exploring
+a primate is sensing
+
+keeping still
+walking
+exploring
+a primate is sensing
+
+keeping still
+walking
+exploring

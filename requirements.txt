@@ -27,3 +27,4 @@ lightning[extra]
 transformers
 accelerate
 openpyxl
+sentence-transformers

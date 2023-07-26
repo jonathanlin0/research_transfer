@@ -9,8 +9,10 @@
 apt-get -y install python3-pip
 sudo apt-get -y install vim
 
-pip3 --yes install cython
+# yes | pip3 install cython
 sudo apt-get -y install python3-dev
+
+# tar -xf archive.tar.gz -C dir
 
 # install anaconda to install numpy
 # mkdir tmp
