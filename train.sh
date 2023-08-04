@@ -30,3 +30,7 @@ python3 Testing/blip2/blip_2_run.py --threshold 0.7
 # test different granualirities (so change animal to species to parent species to eventually just "animal")
 # measure using cosine function
 # take top result and it's +1 if it's in one of the listed actions in AK
+
+# get some more benchmarks w clip
+# use clip for video based action recognition
+# use a CNN on the clip output. CLIP produces x dimension vector. then take the outputs of the frames of the videos and stack them on top of each other. so x is the dimension of the clip embedding and y is the number of frames in the video
