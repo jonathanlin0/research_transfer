@@ -34,3 +34,9 @@ python3 Testing/blip2/blip_2_run.py --threshold 0.7
 # get some more benchmarks w clip
 # use clip for video based action recognition
 # use a CNN on the clip output. CLIP produces x dimension vector. then take the outputs of the frames of the videos and stack them on top of each other. so x is the dimension of the clip embedding and y is the number of frames in the video
+
+overview of clip vs xclip prompting performance (compare static and dynamic)
+compare xclip results and paper results
+clip text adapter for ideas for prompting
+read xclip
+read https://arxiv.org/pdf/2110.04544.pdf

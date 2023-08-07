@@ -28,3 +28,4 @@ transformers
 accelerate
 openpyxl
 sentence-transformers
+av
