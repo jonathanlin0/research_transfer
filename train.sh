@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# python3 visualizer/calc_xclip_class.py -g nothing
-# python3 visualizer/calc_xclip_class.py -g animal
-python3 visualizer/calc_xclip_class.py -g class
+# python3 visualizer/calc_xclip.py -g nothing
+# python3 visualizer/calc_xclip.py -g animal
+python3 visualizer/calc_xclip.py -g class
 
 
 # training scripts for budapest

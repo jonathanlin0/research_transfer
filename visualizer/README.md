@@ -9,7 +9,10 @@ Files that start with `draw` are used to draw the results from the `data` folder
 # Files
 `_prep.py` - Prepares the data for the `calc` files.
 `data.json` - Contains the data from the animal kingdom used for action recognition on videos.
-`calc_xclip_class.py` - Uses XCLIP for AR. Prompt: "a {class} is {action}" for every combination of class and action
+`calc_xclip.py` - Uses XCLIP for AR. Prompt: "a {class} is {action}" for every combination of class and action
+- -g or --granularity: Granularity of the action recognition. Options: "class", "animal", "nothing"
+
+`draw_overall_avg.py` - Draws histograms of average accuracy for each granularity.
 
 # File Formats
 

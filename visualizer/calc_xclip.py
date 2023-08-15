@@ -18,6 +18,13 @@ parser.add_argument(
     help='set the granularity of the XCLIP model',
     choices=["class", "animal", "nothing"]
 )
+parser.add_argument(
+    '-p', '--data_portion', default='all',
+    type = str,
+    required = True,
+    help='set how the text labels are put into XCLIP',
+    choices=["all", "head", "middle", "tail"]
+)
 args = vars(parser.parse_args())
 granularity = args["granularity"]
 print(f"[INFO]: Set the granularity to {granularity}")
