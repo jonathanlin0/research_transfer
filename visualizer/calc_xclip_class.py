@@ -42,6 +42,12 @@ def read_video_pyav(container, indices):
             frames.append(frame)
     return np.stack([x.to_ndarray(format="rgb24") for x in frames])
 
+device = "cpu"
+if torch.cuda.is_available():
+    device = "cuda"
+elif torch.backends.mps.is_available():
+    device = "mps"
+
 def calculate(vid_path, text_labels):
     with redirect_stdout(None), redirect_stderr(None):
         container = av.open(vid_path)
@@ -57,7 +63,7 @@ def calculate(vid_path, text_labels):
                 videos=list(video),
                 return_tensors="pt",
                 padding=True,
-            )
+            ).to(device)
 
             # forward pass
             with torch.no_grad():
@@ -67,7 +73,7 @@ def calculate(vid_path, text_labels):
             probs = logits_per_video.softmax(dim=1)  # we can take the softmax to get the label probabilities
             # index = torch.argmax(probs)
 
-            values.append(probs)
+            values.append(probs.cpu())
             i += 8 # (overlap 2 frames)
         
         arr = np.array([0] * len(list(text_labels.keys())))
@@ -138,7 +144,7 @@ elif granularity == "nothing":
 
 
 processor = AutoProcessor.from_pretrained("microsoft/xclip-base-patch32")
-model = AutoModel.from_pretrained("microsoft/xclip-base-patch32")
+model = AutoModel.from_pretrained("microsoft/xclip-base-patch32").to(device)
 
 df = pd.read_excel("datasets/Animal_Kingdom/action_recognition/annotation/df_action.xlsx")
 
