@@ -74,5 +74,5 @@ for i, model in enumerate(data):
             axs[i][j].text(k, v, f"{(round(v, 2))} ({list(data_split_lengths.values())[k]})", ha='center', va='bottom', fontsize=9)
 
 plt.tight_layout()
-
+plt.savefig("visualizer/figures/overall_avgs.png")
 plt.show()
