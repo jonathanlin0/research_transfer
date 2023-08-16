@@ -2,13 +2,15 @@ from transformers import AutoProcessor, AutoModel
 from contextlib import redirect_stdout, redirect_stderr
 import json
 import argparse
-from transformers import XCLIPVisionModel, XCLIPVisionConfig
+from transformers import CLIPProcessor, CLIPModel
 import av
 import copy
 import numpy as np
 import torch
 from tqdm import tqdm
 import pandas as pd
+from PIL import Image
+import cv2
 import os
 
 parser = argparse.ArgumentParser()
@@ -16,14 +18,14 @@ parser.add_argument(
     '-g', '--granularity', default='class',
     type = str,
     required = True,
-    help='set the granularity of the XCLIP model',
+    help='set the granularity of the CLIP model',
     choices=["class", "animal", "nothing"]
 )
 parser.add_argument(
     '-p', '--data_portion', default='all',
     type = str,
     required = False,
-    help='set how the text labels are put into XCLIP',
+    help='set how the text labels are put into CLIP',
     choices=["all", "head", "middle", "tail", "ak_split"]
 )
 args = vars(parser.parse_args())
@@ -62,15 +64,32 @@ elif torch.backends.mps.is_available():
 def calculate(vid_path, text_labels):
     with redirect_stdout(None), redirect_stderr(None):
         container = av.open(vid_path)
+
         values = []
         i = 0
 
-        # num of frames is 8
+        # every 5 frames
         while i + 7 < container.streams.video[0].frames:
-            video = read_video_pyav(container, np.arange(i, i + 8))
+
+            cap = cv2.VideoCapture(vid_path)
+
+            # Check if the video file was successfully opened
+            if not cap.isOpened():
+                print("Error: Could not open video file.")
+                exit()
+
+            # Get the desired frame index
+            frame_index = i  # Replace this with the index of the frame you want to extract
+
+            # Set the video capture object to the desired frame index
+            cap.set(cv2.CAP_PROP_POS_FRAMES, frame_index)
+
+            # Read the frame
+            ret, frame = cap.read()
+
             inputs = processor(
                 text=list(text_labels.keys()),
-                videos=list(video),
+                images=frame,
                 return_tensors="pt",
                 padding=True,
             ).to(device)
@@ -79,12 +98,12 @@ def calculate(vid_path, text_labels):
             with torch.no_grad():
                 outputs = model(**inputs)
             
-            logits_per_video = outputs.logits_per_video  # this is the video-text similarity score
-            probs = logits_per_video.softmax(dim=1)  # we can take the softmax to get the label probabilities
+            logits_per_image = outputs.logits_per_image  # this is the video-text similarity score
+            probs = logits_per_image.softmax(dim=1)  # we can take the softmax to get the label probabilities
             # index = torch.argmax(probs)
 
             values.append(probs.cpu())
-            i += 10
+            i += 8
         
         arr = np.array([0] * len(list(text_labels.keys())))
         # get average of list of numpy arrays
@@ -107,7 +126,7 @@ def calculate(vid_path, text_labels):
     
     dict_copy = dict((sorted(list(actions.items()))))
 
-    # sort dict_copy by the value (value is the average probability of the action from XCLIP)
+    # sort dict_copy by the value (value is the average probability of the action from CLIP)
     dict_copy = dict(sorted(dict_copy.items(), key=lambda item: item[1], reverse=True))
 
     return list(dict_copy.items())[0][0]
@@ -219,9 +238,8 @@ elif granularity == "animal":
 elif granularity == "nothing":
     strings = get_strings_nothing()
 
-
-processor = AutoProcessor.from_pretrained("microsoft/xclip-base-patch32")
-model = AutoModel.from_pretrained("microsoft/xclip-base-patch32").to(device)
+processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
+model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32").to(device)
 
 video_root = "datasets/Animal_Kingdom/action_recognition/dataset/video/"
 
@@ -262,12 +280,12 @@ for vid_path, _ in tqdm(video_data.items()):
 
 json_data = {}
 try:
-    f = open(f"visualizer/data/xclip.json", "r")
+    f = open(f"visualizer/data/clip.json", "r")
     json_data = json.load(f)
     f.close()
 except:
     pass
 json_data[granularity + ":" + data_portion] = output_data
-f = open(f"visualizer/data/xclip.json", "w")
+f = open(f"visualizer/data/clip.json", "w")
 json.dump(json_data, f, indent=4)
 f.close()

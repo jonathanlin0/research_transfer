@@ -1,9 +1,23 @@
 #!/bin/bash
 
-# python3 visualizer/calc_xclip.py -g nothing
-# python3 visualizer/calc_xclip.py -g animal
-python3 visualizer/calc_xclip.py -g class
+# python3 visualizer/calc_xclip.py -g nothing -p ak_split
+# python3 visualizer/calc_xclip.py -g animal -p ak_split
+# python3 visualizer/calc_xclip.py -g nothing -p head
+# python3 visualizer/calc_clip.py -g nothing -p ak_split
+# python3 visualizer/calc_clip.py -g animal -p ak_split
 
+python3 visualizer/calc_xclip.py -g nothing -p middle
+python3 visualizer/calc_xclip.py -g nothing -p tail
+python3 visualizer/calc_xclip.py -g animal -p middle
+python3 visualizer/calc_xclip.py -g animal -p tail
+python3 visualizer/calc_xclip.py -g animal -p head
+
+python3 visualizer/calc_clip.py -g nothing -p head
+python3 visualizer/calc_clip.py -g nothing -p middle
+python3 visualizer/calc_clip.py -g nothing -p tail
+python3 visualizer/calc_clip.py -g animal -p head
+python3 visualizer/calc_clip.py -g animal -p middle
+python3 visualizer/calc_clip.py -g animal -p tail
 
 # training scripts for budapest
 # python3 main.py --wandb on --model berlin --epochs 100 --batch_size 64 --blocks 2 --num_classes 5

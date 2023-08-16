@@ -11,48 +11,35 @@ AR_DATA_PATH_VAL = "datasets/Animal_Kingdom/action_recognition/annotation/test.c
 DF_ACTION_PATH = "datasets/Animal_Kingdom/action_recognition/annotation/df_action.xlsx"
 DATA_OUTPUT_PATH = "visualizer/"
 
-# read in PE data
-f = open(PE_DATA_PATH_TRAIN, "r")
-pe_data_raw = json.load(f)
-f.close()
-f = open(PE_DATA_PATH_VAL, "r")
-pe_data_raw += json.load(f)
-f.close()
-
-all_image_paths = set()
-for image in pe_data_raw:
-    all_image_paths.add(image["image"][:image["image"].find("/")])
-
-# convert PE data to a dictionary
-pe_data = {}
-for image in pe_data_raw:
-    pe_data[image["image"][:image["image"].find("/")]] = image
-
 action_list = set()
-df = pd.read_excel(DF_ACTION_PATH)
+action_key = pd.read_excel(DF_ACTION_PATH)
 data = {}
 
-# iterate through AR data and add the data that has corresponding PE data (for the class, parent class, etc data)
-f = open(AR_DATA_PATH_TRAIN, "r")
-reader = csv.reader(f, delimiter=" ")
-for row in reader:
-    file_path = row[0]
-    actions = row[4]
-    if file_path in all_image_paths and "," not in actions:
-        data[file_path] = {
-            "animal": pe_data[file_path]["animal"],
-            "animal_parent_class": pe_data[file_path]["animal_parent_class"],
-            "animal_class": pe_data[file_path]["animal_class"],
-            "animal_subclass": pe_data[file_path]["animal_subclass"],
-            "action": actions
+# Load the Excel file into a DataFrame
+excel_file_path = "datasets/Animal_Kingdom/action_recognition/AR_metadata.xlsx"
+df = pd.read_excel(excel_file_path)
+
+data = {}
+
+# Iterate through rows
+for index, row in df.iterrows():
+    # Access columns using row[column_name] or row[column_index]
+    label = row["labels"]
+    if "," not in label:
+        data[row["video_id"]] = {
+            "animal": row["list_animal"].replace("[", "").replace("]", "").replace("'", "").split(", ")[0].lower(),
+            "animal_parent_class": row["list_animal_parent_class"].replace("[", "").replace("]", "").replace("'", "").split(", ")[0].lower(),
+            "action": action_key.at[int(label), 'action'].lower()
         }
-        action_list.add(df.at[int(actions), 'action'].lower())
+        action_list.add(action_key.at[int(label), 'action'].lower())
+
+# get all actions
+
 
 data_copy = data.copy()
 data = {}
 data["action_index_key"] = list(action_list)
 data["video_data"] = data_copy
-
 
 # write the json file data
 f = open(DATA_OUTPUT_PATH + "data.json", "w")
