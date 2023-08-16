@@ -108,34 +108,7 @@ for model in granularity_files:
                     averages[model][granularity][animal_type] += [0]
                     overall_avg.append(0)
     
-            model_avgs[model][granularity] = overall_avg
-                        
-
-        # # sort the data by the key so the values are in alphabetical order
-        # curr_data = dict(sorted(curr_data.items()))
-
-        # # add in the average
-        # curr_data_list = list(curr_data.items())
-        # curr_data_list.insert(0, ("AVERAGE", overall_avg))
-
-        # curr_data = dict(curr_data_list)
-
-        # lengths = []
-        # for item in curr_data:
-        #     lengths.append(len(curr_data[item]))
-        #     curr_data[item] = sum(curr_data[item]) / len(curr_data[item])
-
-        # color = [AVERAGE_BAR_COLOR] + [ANIMAL_CLASS_BAR_COLOR] * (len(curr_data) - 1)
-
-        # # plot the data
-        # axs[i][0].bar(list(curr_data.keys()), list(curr_data.values()), color=color, alpha=0.7)
-        # axs[i][0].set_title(f'Granularity = "{key}"')
-
-        # for j, v in enumerate(list(curr_data.values())):
-        #     axs[i][0].text(j, v, f"{(round(v, 2))} ({lengths[j]})", ha='center', va='bottom', fontsize=9)
-        
-        # axs[i][0].set_ylim(0, 1.1)
-        # axs[i][0].tick_params(axis='x', labelsize=10)    
+            model_avgs[model][granularity] = overall_avg   
     
 data_lengths = copy.deepcopy(data)
 averages_lengths = copy.deepcopy(averages)
@@ -199,16 +172,19 @@ for i, model in enumerate(data):
 
             # Add labels on top of each bar
             # have to do this weird method for some reason cuz the values weren't being centered w the bars
+            index = 0
             for bar, length in zip(bars, lengths):
                 height = bar.get_height()
+                label = f"{(round(height, 2))} ({length})" if x_values[index] != "N/A" else ""
                 axs[row + row_offset][k + 1].text(
                     bar.get_x() + bar.get_width() / 2,
                     height + 0.01,  # Adjust this value for vertical position of the label
-                    f"{(round(height, 2))} ({length})",
+                    label,
                     ha='center',
                     va='bottom',
                     fontsize=8
                 )
+                index += 1
             
             axs[row + row_offset][k + 1].set_ylim(0, 1.1)
             axs[row + row_offset][k + 1].tick_params(axis='x', labelsize=7)
