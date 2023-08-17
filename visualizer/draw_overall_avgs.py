@@ -20,8 +20,8 @@ granularity_files = os.listdir("visualizer/data")
 # }
 
 order_of_models = ["clip", "xclip"]
-order_of_granularities = ["animal", "nothing"]
-order_of_data_splits = ["ak_split", "head", "middle", "tail"]
+order_of_granularities = ["animal", "animal_synonyms", "nothing", "nothing_synonyms"]
+order_of_data_splits = ["ak_split", "head", "middle", "tail", "all"]
 data_split_lengths = {}
 
 for i in order_of_data_splits:
@@ -57,11 +57,13 @@ for model in granularity_files:
         granularity = key[:key.find(':')]
         data_split = key[key.find(':')+1:]
 
-        data_split_lengths[data_split] = total
-        
-        data[model][granularity][data_split] = cnt / total
+        if granularity in order_of_granularities and data_split in order_of_data_splits:
 
-fig, axs = plt.subplots(len(order_of_models), len(order_of_granularities), figsize=(len(order_of_models) * 5, len(order_of_granularities) * 5))
+            data_split_lengths[data_split] = total
+            
+            data[model][granularity][data_split] = cnt / total
+
+fig, axs = plt.subplots(len(order_of_models), len(order_of_granularities), figsize=(len(order_of_granularities) * 5, len(order_of_models) * 5))
 
 for i, model in enumerate(data):
     for j, granularity in enumerate(data[model]):

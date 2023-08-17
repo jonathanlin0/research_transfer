@@ -19,7 +19,7 @@ parser.add_argument(
     type = str,
     required = True,
     help='set the granularity of the CLIP model',
-    choices=["class", "animal", "nothing"]
+    choices=["class", "animal", "nothing", "animal_synonyms", "nothing_synonyms"]
 )
 parser.add_argument(
     '-p', '--data_portion', default='all',
@@ -203,6 +203,8 @@ if data_portion != "all":
         
         data["video_data"] = data_copy
 
+synonyms_dict = json.load(open("visualizer/synonyms.json", "r"))
+
 # get all subclasses
 classes = set()
 for video in data["video_data"]:
@@ -227,6 +229,24 @@ def get_strings_nothing():
         out[f"{action}"] = action
     return out
 
+def get_strings_animal_synonyms():
+    out = {}
+    for action in data["action_index_key"]:
+        out[f"an animal is {action}"] = action
+        for synonym in synonyms_dict[action]:
+            out[f"an animal is {synonym}"] = action
+
+    return out
+
+def get_strings_nothing_synonyms():
+    out = {}
+    for action in data["action_index_key"]:
+        out[f"{action}"] = action
+        for synonym in synonyms_dict[action]:
+            out[f"{synonym}"] = action
+
+    return out
+
 granularity = args["granularity"]
 
 # create training strings
@@ -237,6 +257,10 @@ elif granularity == "animal":
     strings = get_strings_animal()
 elif granularity == "nothing":
     strings = get_strings_nothing()
+elif granularity == "animal_synonyms":
+    strings = get_strings_animal_synonyms()
+elif granularity == "nothing_synonyms":
+    strings = get_strings_nothing_synonyms()
 
 processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
 model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32").to(device)

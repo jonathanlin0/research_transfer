@@ -93,7 +93,7 @@ for model in granularity_files:
         granularity = key[:key.find(':')]
         data_split = key[key.find(':')+1:]
 
-        if data_split == "ak_split":
+        if data_split == "ak_split" and granularity in granularities:
             overall_avg = []
 
             for animal_data in model_data[key]["raw_data"].values():
