@@ -62,8 +62,7 @@ elif torch.backends.mps.is_available():
     device = "mps"
 
 def calculate(vid_path, text_labels):
-    # with redirect_stdout(None), redirect_stderr(None):
-    if True:
+    with redirect_stdout(None), redirect_stderr(None):
         container = av.open(vid_path)
 
         values = []

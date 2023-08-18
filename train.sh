@@ -14,12 +14,6 @@
 # python3 visualizer/calc_xclip.py -g synonyms -p head
 # python3 visualizer/calc_clip.py -g synonyms -p head
 
-python3 visualizer/calc_clip.py -g animal_synonyms -p all
-
-python3 visualizer/calc_xclip.py -g animal_synonyms -p ak_split
-python3 visualizer/calc_xclip.py -g animal_synonyms -p tail
-python3 visualizer/calc_xclip.py -g animal_synonyms -p middle
-python3 visualizer/calc_xclip.py -g animal_synonyms -p head
 python3 visualizer/calc_xclip.py -g animal_synonyms -p all
 
 python3 visualizer/calc_clip.py -g nothing_synonyms -p ak_split

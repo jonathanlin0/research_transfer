@@ -60,7 +60,8 @@ elif torch.backends.mps.is_available():
     device = "mps"
 
 def calculate(vid_path, text_labels):
-    with redirect_stdout(None), redirect_stderr(None):
+    # with redirect_stdout(None), redirect_stderr(None):
+    if True:
         container = av.open(vid_path)
         values = []
         i = 0
@@ -68,6 +69,7 @@ def calculate(vid_path, text_labels):
         # num of frames is 8
         while i + 7 < container.streams.video[0].frames:
             video = read_video_pyav(container, np.arange(i, i + 8))
+
             inputs = processor(
                 text=list(text_labels.keys()),
                 videos=list(video),
@@ -78,6 +80,8 @@ def calculate(vid_path, text_labels):
             # forward pass
             with torch.no_grad():
                 outputs = model(**inputs)
+            
+            print(outputs.shape)
             
             logits_per_video = outputs.logits_per_video  # this is the video-text similarity score
             probs = logits_per_video.softmax(dim=1)  # we can take the softmax to get the label probabilities
