@@ -84,7 +84,7 @@ def calculate(vid_path, text_labels):
             # index = torch.argmax(probs)
 
             values.append(probs.cpu())
-            i += 10
+            i += 12
         
         arr = np.array([0] * len(list(text_labels.keys())))
         # get average of list of numpy arrays

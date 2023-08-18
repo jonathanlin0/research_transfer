@@ -28,6 +28,9 @@ sudo apt-get -y install python3-dev
 
 pip3 install -r requirements.txt
 
+# cv2 dependencies
+apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
+
 chmod +rwx ./train.sh
 
 # conda create --name j_research python=3.10 pip

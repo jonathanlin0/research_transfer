@@ -62,22 +62,24 @@ elif torch.backends.mps.is_available():
     device = "mps"
 
 def calculate(vid_path, text_labels):
-    with redirect_stdout(None), redirect_stderr(None):
+    # with redirect_stdout(None), redirect_stderr(None):
+    if True:
         container = av.open(vid_path)
 
         values = []
         i = 0
 
-        # every 5 frames
-        while i + 7 < container.streams.video[0].frames:
+        frames = []
 
+        # add every 8 frames
+        while i + 7 < container.streams.video[0].frames:
             cap = cv2.VideoCapture(vid_path)
 
             # Check if the video file was successfully opened
             if not cap.isOpened():
                 print("Error: Could not open video file.")
                 exit()
-
+            
             # Get the desired frame index
             frame_index = i  # Replace this with the index of the frame you want to extract
 
@@ -86,24 +88,28 @@ def calculate(vid_path, text_labels):
 
             # Read the frame
             ret, frame = cap.read()
+            frames.append(frame)
 
-            inputs = processor(
-                text=list(text_labels.keys()),
-                images=frame,
-                return_tensors="pt",
-                padding=True,
-            ).to(device)
-
-            # forward pass
-            with torch.no_grad():
-                outputs = model(**inputs)
-            
-            logits_per_image = outputs.logits_per_image  # this is the video-text similarity score
-            probs = logits_per_image.softmax(dim=1)  # we can take the softmax to get the label probabilities
-            # index = torch.argmax(probs)
-
-            values.append(probs.cpu())
             i += 8
+        
+        frames = np.array(frames)
+
+        inputs = processor(
+            text=list(text_labels.keys()),
+            images=frames,
+            return_tensors="pt",
+            padding=True,
+        ).to(device)
+
+        # forward pass
+        with torch.no_grad():
+            outputs = model(**inputs)
+        
+        logits_per_image = outputs.logits_per_image  # this is the video-text similarity score
+
+        for subarray in logits_per_image:
+            subarray.softmax(dim=0)
+            values.append(subarray.cpu())
         
         arr = np.array([0] * len(list(text_labels.keys())))
         # get average of list of numpy arrays
