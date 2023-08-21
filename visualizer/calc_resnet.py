@@ -180,7 +180,7 @@ class ak_ar_images_dataset(Dataset):
 
         return (image, label)
 
-def get_data(batch_size=16, num_workers=8):
+def get_data(batch_size=64, num_workers=8):
     # cwd = "/home/jonathan/Desktop/Perona_Research"
     cwd = os.path.dirname(os.path.realpath(__file__))
     cwd = cwd[0:cwd.rfind("/")]
@@ -380,7 +380,7 @@ if __name__ == "__main__":
                 "dataset": "ak_ar_images",
                 "epochs": epochs,
                 "dropout": dropout,
-                "batch_size": 16,
+                "batch_size": 64,
                 "data_split": data_split
             }
         )

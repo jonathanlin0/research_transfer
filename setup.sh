@@ -12,6 +12,13 @@ sudo apt-get -y install vim
 # yes | pip3 install cython
 sudo apt-get -y install python3-dev
 
+pip3 install -r requirements.txt
+
+# cv2 dependencies
+apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
+
+chmod +rwx ./train.sh
+
 # tar -xf archive.tar.gz -C dir
 
 # install anaconda to install numpy
@@ -24,14 +31,7 @@ sudo apt-get -y install python3-dev
 # cd research_transfer
 # conda install -y -c conda-forge --file requirements.txt
 
-# pip3 install git+https://bitbucket.org/pypy/numpy.git
 
-pip3 install -r requirements.txt
-
-# cv2 dependencies
-apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
-
-chmod +rwx ./train.sh
 
 # conda create --name j_research python=3.10 pip
 
