@@ -184,7 +184,7 @@ if __name__ == '__main__':
     model_config_key = {
         "beijing": ["learning_rate", "architecture", "dataset", "epochs", "optimizer", "loss_fn", "blocks", "activation", "dropout", "batch_size"],
         "berlin": ["learning_rate", "architecture", "dataset", "epochs", "optimizer", "loss_fn", "blocks", "activation", "dropout", "batch_size"],
-        "berlin": ["learning_rate", "architecture", "dataset", "epochs", "optimizer", "loss_fn", "dropout", "batch_size"]
+        "budapest": ["learning_rate", "architecture", "dataset", "epochs", "optimizer", "loss_fn", "dropout", "batch_size"]
     }
 
     config = {}

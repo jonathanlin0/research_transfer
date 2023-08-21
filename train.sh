@@ -1,26 +1,11 @@
 #!/bin/bash
 
-python3 visualizer/calc_xclip.py -g animal_synonyms -p all
+python3 visualizer/calc_resnet.py --data_split ak_split
+python3 visualizer/calc_resnet.py --data_split tail
+python3 visualizer/calc_resnet.py --data_split middle
+python3 visualizer/calc_resnet.py --data_split head
+python3 visualizer/calc_resnet.py --data_split all
 
-python3 visualizer/calc_clip.py -g nothing_synonyms -p ak_split
-python3 visualizer/calc_clip.py -g nothing_synonyms -p tail
-python3 visualizer/calc_clip.py -g nothing_synonyms -p middle
-python3 visualizer/calc_clip.py -g nothing_synonyms -p head
-python3 visualizer/calc_clip.py -g nothing_synonyms -p all
-
-python3 visualizer/calc_xclip.py -g animal -p all
-python3 visualizer/calc_xclip.py -g nothing -p all
-
-# cut off
-
-python3 visualizer/calc_xclip.py -g nothing_synonyms -p ak_split
-python3 visualizer/calc_xclip.py -g nothing_synonyms -p tail
-python3 visualizer/calc_xclip.py -g nothing_synonyms -p middle
-python3 visualizer/calc_xclip.py -g nothing_synonyms -p head
-python3 visualizer/calc_xclip.py -g nothing_synonyms -p all
-
-python3 visualizer/calc_clip.py -g animal -p all
-python3 visualizer/calc_clip.py -g nothing -p all
 
 # training scripts for budapest
 # python3 main.py --wandb on --model berlin --epochs 100 --batch_size 64 --blocks 2 --num_classes 5

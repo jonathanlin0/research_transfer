@@ -47,7 +47,7 @@ csv_path = cwd + "datasets/Animal_Kingdom/action_recognition/annotation/val.csv"
 df = pd.read_excel(f"{cwd}datasets/Animal_Kingdom/action_recognition/annotation/df_action.xlsx")
 landmarks_frame = pd.read_csv(csv_path, delimiter = " ")
 
-processor = Blip2Processor.from_pretrained("Salesforce/blip2-opt-2.7b")
+# processor = Blip2Processor.from_pretrained("Salesforce/blip2-opt-2.7b")
 
 class clip2_baseline(pl.LightningModule):
     def __init__(self, num_classes, threshold):
@@ -160,11 +160,11 @@ class clip2_baseline(pl.LightningModule):
         return torch.optim.SGD(self.parameters(), momentum=0.9, weight_decay=0.0001, lr = 0.001)
     
     def train_dataloader(self):
-        train_loader, val_loader = dataloader.get_data()
+        train_loader, _ = dataloader.get_data()
         return train_loader
     
     def val_dataloader(self):
-        train_loader, val_loader = dataloader.get_data()
+        _, val_loader = dataloader.get_data()
         return val_loader
 
     def on_train_epoch_end(self):
