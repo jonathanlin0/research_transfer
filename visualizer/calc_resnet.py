@@ -50,7 +50,7 @@ import torchvision.models as models
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
-    '-p', '--data_split', default='all',
+    '-s', '--data_split', default='all',
     type = str,
     required = False,
     help='set how the text labels are put into CLIP',
@@ -180,7 +180,7 @@ class ak_ar_images_dataset(Dataset):
 
         return (image, label)
 
-def get_data(batch_size=64, num_workers=8):
+def get_data(batch_size=16, num_workers=8):
     # cwd = "/home/jonathan/Desktop/Perona_Research"
     cwd = os.path.dirname(os.path.realpath(__file__))
     cwd = cwd[0:cwd.rfind("/")]
@@ -364,7 +364,7 @@ class calc_resnet(pl.LightningModule):
 if __name__ == "__main__":
     print(f"[INFO]: Set the data portion to {data_split}")
 
-    track_wandb = True
+    track_wandb = False
     lr = 0.001
     num_classes = len(data["action_index_key"])
     epochs = 75
