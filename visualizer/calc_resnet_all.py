@@ -46,6 +46,7 @@ from torchmetrics import Accuracy
 from torchvision.datasets import MNIST
 from torch.nn import functional as F
 import torchvision.models as models
+import random
 
 
 parser = argparse.ArgumentParser()
@@ -191,6 +192,7 @@ class ak_ar_images_dataset(Dataset):
         csv_files = ["datasets/Animal_Kingdom/action_recognition/annotation/train.csv", "datasets/Animal_Kingdom/action_recognition/annotation/val.csv"]
         # csv_files = [annotation_dir]
         df = pd.read_excel("datasets/Animal_Kingdom/action_recognition/annotation/df_action.xlsx")
+        val_added_vids = {}
         for file_path in csv_files:
             with open(file_path, "r") as csv_file:
                 csvreader = csv.reader(csv_file, delimiter=" ")
@@ -202,7 +204,19 @@ class ak_ar_images_dataset(Dataset):
                         labels_index = int(row[4])
                         label = df.at[labels_index, "action"].lower()
                         image_path = row[3]
-                        self.d.append((image_path, label))
+
+                        if dataset_type == "train":
+                            self.d.append((image_path, label))
+                        else:
+                            if video_name not in val_added_vids:
+                                val_added_vids[video_name] = []
+                            val_added_vids[video_name].append((image_path, label))
+                            
+        # randomly choose a frame from a video as the validation
+        if dataset_type == "val":
+            for video_name in val_added_vids:
+                self.d.append(random.choice(val_added_vids[video_name]))
+              
 
     def __len__(self):
         return len(self.d)
