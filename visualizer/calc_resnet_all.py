@@ -292,7 +292,9 @@ class calc_resnet(pl.LightningModule):
         num_target_classes = num_classes
         self.dense = nn.Linear(num_filters, num_filters // 2)
         self.dense2 = nn.Linear(num_filters // 2, num_filters // 4)
-        self.classifier = nn.Linear(num_filters // 4, num_target_classes)
+        self.dense3 = nn.Linear(num_filters // 4, num_filters // 8)
+        self.dense4 = nn.Linear(num_filters // 8, num_filters // 16)
+        self.classifier = nn.Linear(num_filters // 16, num_target_classes)
         self.dropout = nn.Dropout(dropout)
 
         self.lr = lr
@@ -313,6 +315,10 @@ class calc_resnet(pl.LightningModule):
         x = self.dense(x)
         x = self.dropout(x)
         x = self.dense2(x)
+        x = self.dropout(x)
+        x = self.dense3(x)
+        x = self.dropout(x)
+        x = self.dense4(x)
         x = self.dropout(x)
         x = self.classifier(x)
 
