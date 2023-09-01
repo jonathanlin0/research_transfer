@@ -1,5 +1,6 @@
 
 datasets/Animal_Kingdom/*
+datasets/newt/*
 lightning_logs/*
 *.DS_Store
 wandb/*

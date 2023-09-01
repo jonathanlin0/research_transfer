@@ -1,4 +1,4 @@
-# this runs single action recognition on the dataset
+# this file does action recognition on the new newt dataset
 
 import os
 import torch
@@ -48,15 +48,10 @@ from torch.nn import functional as F
 import torchvision.models as models
 import random
 
+np.random.seed(42)
+torch.manual_seed(42)
 
 parser = argparse.ArgumentParser()
-parser.add_argument(
-    '-s', '--data_split', default='ak_split',
-    type = str,
-    required = False,
-    help='set how the text labels are put into CLIP',
-    choices=["ak_split"]
-)
 parser.add_argument(
     '-w', '--weights_and_biases', default=False,
     type = bool,
@@ -71,113 +66,75 @@ parser.add_argument(
     help='set the batch size',
     choices=[4,8,16,32,64,128,256,512,1024]
 )
+parser.add_argument(
+    '-p', '--val_split_probability', default=0.2,
+    type = float,
+    required = False,
+    help='set the percentage of the dataset that is used for validation',
+)
 args = vars(parser.parse_args())
-data_split = args["data_split"]
 track_wandb = args["weights_and_biases"]
 arg_batch_size = args["batch_size"]
+val_split_prob = args["val_split_probability"]
 
+# key is the video name. value is the label (in string form)
+data_train = {}
+data_val = {}
 
-f = open("visualizer/data.json", "r")
-data_val = json.load(f)
-f.close()
+# read in the data
+with open('datasets/newt/newt2021_labels.csv', 'r') as csv_file:
+    csv_reader = csv.reader(csv_file)
 
-# get the correct labels
-df = pd.read_excel("datasets/Animal_Kingdom/action_recognition/annotation/df_action.xlsx")
+    # Skip the header row
+    next(csv_reader)
 
-valid_actions = ["moving", "eating", "attending", "swimming", "sensing", "keeping still"]
-# training data. same process as used in calc_clip.py and calc_xclip.py
-if data_split != "all":
-    if data_split == "head" or data_split == "middle" or data_split == "tail":
-        correct_actions = []
-        for index, row in df.iterrows():
-            if row["segment"] == data_split:
-                correct_actions.append(row["action"].lower())
-        
-        # remove actions from action["action_index_key"]
-        to_remove = []
-        for action in correct_actions:
-            if action not in data_val["action_index_key"]:
-                to_remove.append(action)
-        for action in to_remove:
-            correct_actions.remove(action)
-        data_val["action_index_key"] = correct_actions
-
-        # remove data from data["video_data"]
-        data_temp = {}
-        for vid_path in data_val["video_data"]:
-            if data_val["video_data"][vid_path]["action"] in correct_actions:
-                data_temp[vid_path] = data_val["video_data"][vid_path]
-        
-        data_val["video_data"] = data_temp
-    elif data_split == "ak_split":
-        # this is the split used in animal kingdom
-        # the 5 animals are lizards, primates, spiders, orthopteran insects, water fowl
-        # the namings arent exactly the same, because an animal has multiple types of names
-        
-        classes = ["lizard", "primate", "spider", "insect", "water bird"]
-        modified_to_original = {}
-
-        subclass_df = pd.read_excel("datasets/Animal_Kingdom/action_recognition/AR_metadata.xlsx", sheet_name="Animal")
-        for index, row in subclass_df.iterrows():
-            curr_classes = row["Sub-Class"].split(" / ")
-            # turn all to lowercase
-            for i in range(len(curr_classes)):
-                curr_classes[i] = curr_classes[i].lower()
-
-            matching_class = ""
-            for curr_class in curr_classes:
-                if curr_class in classes:
-                    matching_class = curr_class
-                    break
-            
-            if matching_class != "":
-                for curr_class in curr_classes:
-                    modified_to_original[curr_class] = matching_class
-        
-        # modify data obj to only have these 5 classes with the valid actions
-        i = 0
-        while i < len(data_val["action_index_key"]):
-            if data_val["action_index_key"][i] not in valid_actions:
-                data_val["action_index_key"].pop(i)
+    # Iterate through the rows
+    for row in csv_reader:
+        id = row[0]
+        cluster = row[1]
+        if cluster == "behavior":
+            label = row[5]
+            num = random.random()
+            if num <= val_split_prob:
+                data_val[id + ".jpg"] = label
             else:
-                i += 1
-        
-        data_copy = {}
-        for data_pt in data_val["video_data"]:
-            if data_val["video_data"][data_pt]["animal"].lower() in modified_to_original and data_val["video_data"][data_pt]["action"] in valid_actions:
-                data_copy[data_pt] = data_val["video_data"][data_pt]
-                data_copy[data_pt]["animal"] = modified_to_original[data_val["video_data"][data_pt]["animal"].lower()]
-        
-        data_val["video_data"] = data_copy
+                data_train[id + ".jpg"] = label
+            
+# convert the labels to integers
+all_labels = list(set(list(data_train.values()) + list(data_val.values())))
+string_to_int_labels = {}
+for i, label in enumerate(all_labels):
+    string_to_int_labels[label] = i
 
-print(data_val)
+for key in data_train:
+    data_train[key] = string_to_int_labels[data_train[key]]
+for key in data_val:
+    data_val[key] = string_to_int_labels[data_val[key]]
 
-valid_actions = ["moving", "eating", "attending", "swimming", "sensing", "keeping still"]
-val_classes = ["insect", "lizard", "primate", "spider", "water bird"]
+heights = []
+widths = []
 
-# get training data
-df = pd.read_excel("datasets/Animal_Kingdom/action_recognition/AR_metadata.xlsx")
-data_train = {
-    "video_data": {}
-}
-for index, row in df.iterrows():
-    # check only 1 action
-    if row["list_animal_action"].count(",") == 1:
-        temp_text = row["list_animal_action"].replace("(", "").replace(")", "").replace("'", "").replace("[", "").replace("]", "").strip().split(", ")
-        animal = temp_text[0].lower()
-        action = temp_text[1].lower()
-        if animal not in val_classes and action in valid_actions:
-            video_path = row["video_id"]
-            parent_class = row["list_animal_parent_class"].replace("[", "").replace("]", "").replace("'", "").split(", ")[0].lower()
-            data_train["video_data"][video_path] = {
-                "animal": animal,
-                "parent_class": parent_class,
-                "action": action
-            }
+# look at the shape of the images
+for key in list(data_train.keys()) + list(data_val.keys()):
+    from PIL import Image
+
+    # Open an image
+    image = Image.open("datasets/newt/newt2021_images/" + key)
+
+    # Get the dimensions (width and height)
+    width, height = image.size
+
+    heights.append(height)
+    widths.append(width)
+
+avg_height = (sum(heights) / len(heights))
+avg_width = (sum(widths) / len(widths))
+
+
 
 # ------------------------------------------------DATALOADER CLASS------------------------------------------------
 class ak_ar_images_dataset(Dataset):
-    def __init__(self, dataset_type, data_dir, annotation_dir, transform=None):
+    def __init__(self, dataset_type, data_dir="datasets/newt/newt2021_images/", transform=None):
 
         valid_types = {"train", "val"}
         if dataset_type not in valid_types:
@@ -185,39 +142,11 @@ class ak_ar_images_dataset(Dataset):
 
         self.data_dir = data_dir
         self.transform = transform
+    
+        images = data_train if dataset_type == "train" else data_val
+
         # convert the "data" variable to a list of tuples. first ele is the image, second ele is the label
-        self.d = []
-
-        valid_videos = data_train["video_data"] if dataset_type == "train" else data_val["video_data"]
-
-        csv_files = ["datasets/Animal_Kingdom/action_recognition/annotation/train.csv", "datasets/Animal_Kingdom/action_recognition/annotation/val.csv"]
-        # csv_files = [annotation_dir]
-        df = pd.read_excel("datasets/Animal_Kingdom/action_recognition/annotation/df_action.xlsx")
-        val_added_vids = {}
-        for file_path in csv_files:
-            with open(file_path, "r") as csv_file:
-                csvreader = csv.reader(csv_file, delimiter=" ")
-                # skip the first row
-                next(csvreader)
-                for i, row in enumerate(csvreader):
-                    video_name = row[0]
-                    if video_name in valid_videos and "," not in row[4]:
-                        labels_index = int(row[4])
-                        label = df.at[labels_index, "action"].lower()
-                        image_path = row[3]
-
-                        if dataset_type == "train":
-                            self.d.append((image_path, label))
-                        else:
-                            if video_name not in val_added_vids:
-                                val_added_vids[video_name] = []
-                            val_added_vids[video_name].append((image_path, label))
-                            
-        # randomly choose a frame from a video as the validation
-        if dataset_type == "val":
-            for video_name in val_added_vids:
-                self.d.append(random.choice(val_added_vids[video_name]))
-              
+        self.d = list(images.items())
 
     def __len__(self):
         return len(self.d)
@@ -231,15 +160,12 @@ class ak_ar_images_dataset(Dataset):
         img_path = self.data_dir + self.d[idx][0]
         label = self.d[idx][1]
 
-        label_index = data_val["action_index_key"].index(label)
-        # label_tensor = torch.tensor(label_index, dtype=torch.long)  # Convert to tensor
-
         image = PIL.Image.open(img_path, mode="r")
         if self.transform is not None:
             image = self.transform(image)
         image = image.to(torch.float32)
 
-        return (image, label_index)
+        return (image, label)
 
 
 def get_data(batch_size=arg_batch_size, num_workers=8):
@@ -252,9 +178,8 @@ def get_data(batch_size=arg_batch_size, num_workers=8):
 
     train_dataset = ak_ar_images_dataset(
         dataset_type = "train",
-        data_dir = "datasets/Animal_Kingdom/action_recognition/dataset/image/",
-        annotation_dir = "datasets/Animal_Kingdom/action_recognition/annotation/train.csv",
         transform=torchvision.transforms.Compose([
+                        transforms.CenterCrop((int(avg_height), int(avg_width))),
                         transforms.RandomHorizontalFlip(),
                         # transforms.Resize((224, 224)),
                         transforms.RandAugment(),
@@ -264,9 +189,8 @@ def get_data(batch_size=arg_batch_size, num_workers=8):
 
     val_dataset = ak_ar_images_dataset(
         dataset_type = "val",
-        data_dir = "datasets/Animal_Kingdom/action_recognition/dataset/image/",
-        annotation_dir = "datasets/Animal_Kingdom/action_recognition/annotation/val.csv",
         transform=torchvision.transforms.Compose([
+                        transforms.CenterCrop((int(avg_height), int(avg_width))),
                         #  transforms.RandomHorizontalFlip(),
                         #  transforms.RandAugment(),
                         # transforms.Resize((224, 224)),
@@ -289,6 +213,7 @@ def get_data(batch_size=arg_batch_size, num_workers=8):
     )
 
     return train_loader, val_loader
+
 
 class calc_resnet(pl.LightningModule):
     def __init__(self, 
@@ -432,12 +357,12 @@ class calc_resnet(pl.LightningModule):
 
 # ------------------------------------------------MAIN------------------------------------------------
 if __name__ == "__main__":
-    print(f"[INFO]: Set the data portion to {data_split}")
     print(f"[INFO]: Set the wandb tracking to {track_wandb}")
     print(f"[INFO]: Set the batch size to {arg_batch_size}")
+    print(f"[INFO]: Set the validation split probability to {val_split_prob}")
 
     lr = 0.001
-    num_classes = len(data_val["action_index_key"])
+    num_classes = len(all_labels)
     epochs = 75
     dropout = 0.2
 
@@ -448,17 +373,17 @@ if __name__ == "__main__":
             config={
                 "learning_rate": lr,
                 "architecture": "calc_resnet",
-                "dataset": "ak_ar_images",
+                "dataset": "newt_ar_images",
                 "epochs": epochs,
                 "dropout": dropout,
                 "batch_size": arg_batch_size,
-                "data_split": data_split
+                "val_split_probability": val_split_prob,
             }
         )
 
     model = calc_resnet(track_wandb=track_wandb,
                             lr=0.001,
-                            num_classes=len(data_val["action_index_key"]),
+                            num_classes=num_classes,
                             dropout=0.2)
     
     trainer = Trainer(max_epochs = 50, fast_dev_run=False)
