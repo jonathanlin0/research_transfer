@@ -50,6 +50,7 @@ import random
 
 np.random.seed(42)
 torch.manual_seed(42)
+random.seed(42)
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
@@ -72,10 +73,17 @@ parser.add_argument(
     required = False,
     help='set the percentage of the dataset that is used for validation',
 )
+parser.add_argument(
+    '-e', '--epochs', default=100,
+    type = int,
+    required = False,
+    help='set the number of epochs',
+)
 args = vars(parser.parse_args())
 track_wandb = args["weights_and_biases"]
 arg_batch_size = args["batch_size"]
 val_split_prob = args["val_split_probability"]
+epochs = args["epochs"]
 
 # key is the video name. value is the label (in string form)
 data_train = {}
@@ -129,8 +137,8 @@ for key in list(data_train.keys()) + list(data_val.keys()):
 
 avg_height = (sum(heights) / len(heights))
 avg_width = (sum(widths) / len(widths))
-
-
+median_height = sorted(heights)[len(heights) // 2]
+median_width = sorted(widths)[len(widths) // 2]
 
 # ------------------------------------------------DATALOADER CLASS------------------------------------------------
 class ak_ar_images_dataset(Dataset):
@@ -179,7 +187,7 @@ def get_data(batch_size=arg_batch_size, num_workers=8):
     train_dataset = ak_ar_images_dataset(
         dataset_type = "train",
         transform=torchvision.transforms.Compose([
-                        transforms.CenterCrop((int(avg_height), int(avg_width))),
+                        transforms.CenterCrop((int(median_height), int(median_width))),
                         transforms.RandomHorizontalFlip(),
                         # transforms.Resize((224, 224)),
                         transforms.RandAugment(),
@@ -190,7 +198,7 @@ def get_data(batch_size=arg_batch_size, num_workers=8):
     val_dataset = ak_ar_images_dataset(
         dataset_type = "val",
         transform=torchvision.transforms.Compose([
-                        transforms.CenterCrop((int(avg_height), int(avg_width))),
+                        transforms.CenterCrop((int(median_height), int(median_width))),
                         #  transforms.RandomHorizontalFlip(),
                         #  transforms.RandAugment(),
                         # transforms.Resize((224, 224)),
@@ -360,10 +368,10 @@ if __name__ == "__main__":
     print(f"[INFO]: Set the wandb tracking to {track_wandb}")
     print(f"[INFO]: Set the batch size to {arg_batch_size}")
     print(f"[INFO]: Set the validation split probability to {val_split_prob}")
+    print(f"[INFO]: Set the number of epochs to {epochs}")
 
     lr = 0.001
     num_classes = len(all_labels)
-    epochs = 75
     dropout = 0.2
 
     if track_wandb:
@@ -386,7 +394,7 @@ if __name__ == "__main__":
                             num_classes=num_classes,
                             dropout=0.2)
     
-    trainer = Trainer(max_epochs = 50, fast_dev_run=False)
+    trainer = Trainer(max_epochs = epochs, fast_dev_run=False)
     trainer.fit(model)
 
     if track_wandb:

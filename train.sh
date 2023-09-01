@@ -1,10 +1,11 @@
 #!/bin/bash
 
-python3 visualizer/calc_resnet.py --data_split ak_split
-python3 visualizer/calc_resnet.py --data_split tail
-python3 visualizer/calc_resnet.py --data_split middle
-python3 visualizer/calc_resnet.py --data_split head
-python3 visualizer/calc_resnet.py --data_split all
+python3 Testing/basic_newt_resnet/main.py -w true -b 32 -p 0.3
+python3 Testing/basic_newt_resnet/main.py -w true -b 32 -p 0.2
+python3 Testing/basic_newt_resnet/main.py -w true -b 32 -p 0.1
+python3 Testing/basic_newt_resnet/main.py -w true -b 16 -p 0.3
+python3 Testing/basic_newt_resnet/main.py -w true -b 16 -p 0.2
+python3 Testing/basic_newt_resnet/main.py -w true -b 16 -p 0.1
 
 
 # training scripts for budapest
