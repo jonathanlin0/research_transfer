@@ -29,3 +29,4 @@ accelerate
 openpyxl
 sentence-transformers
 av
+datasets

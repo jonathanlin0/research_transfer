@@ -1,5 +1,3 @@
-# this file does action recognition on the new newt dataset
-
 import os
 import torch
 import pandas as pd
@@ -11,7 +9,7 @@ from torchvision import transforms, utils
 import json
 import torchvision
 import PIL
-from transformers import AutoProcessor, AutoModel
+from transformers import AutoProcessor, AutoModel, ViTImageProcessor, ViTForImageClassification, AdamW
 from contextlib import redirect_stdout, redirect_stderr
 import json
 import argparse
@@ -89,7 +87,6 @@ epochs = args["epochs"]
 data_train = {}
 data_val = {}
 
-
 # read in the data
 with open('datasets/newt/newt2021_labels.csv', 'r') as csv_file:
     csv_reader = csv.reader(csv_file)
@@ -100,7 +97,7 @@ with open('datasets/newt/newt2021_labels.csv', 'r') as csv_file:
     # Iterate through the rows
     for row in csv_reader:
         id = row[0]
-        cluster = row[1].lower()
+        cluster = row[1]
         if cluster == "behavior":
             label = row[5]
             num = random.random()
@@ -108,7 +105,7 @@ with open('datasets/newt/newt2021_labels.csv', 'r') as csv_file:
                 data_val[id + ".jpg"] = label
             else:
                 data_train[id + ".jpg"] = label
-
+            
 # convert the labels to integers
 all_labels = list(set(list(data_train.values()) + list(data_val.values())))
 string_to_int_labels = {}
@@ -172,11 +169,11 @@ class ak_ar_images_dataset(Dataset):
         label = self.d[idx][1]
 
         image = PIL.Image.open(img_path, mode="r")
-        if self.transform is not None:
-            image = self.transform(image)
-        image = image.to(torch.float32)
+        # if self.transform is not None:
+        #     image = self.transform(image)
+        # image = image.to(torch.float32)
 
-        return (image, label)
+        return (image.convert("RGB"), label)
 
 
 def get_data(batch_size=arg_batch_size, num_workers=8):
@@ -225,20 +222,18 @@ def get_data(batch_size=arg_batch_size, num_workers=8):
 
     return train_loader, val_loader
 
-
 class calc_resnet(pl.LightningModule):
     def __init__(self, 
         track_wandb: bool,
         lr: float,
         num_classes: int,
         dropout: float):
+        
         super().__init__()
 
-        # init a pretrained resnet
-        backbone = models.resnet50(weights="DEFAULT")
-        num_filters = backbone.fc.in_features
-        layers = list(backbone.children())[:-1]
-        self.feature_extractor = nn.Sequential(*layers)
+        num_filters = 512
+        self.vit = ViTForImageClassification.from_pretrained('google/vit-base-patch16-224-in21k',
+                                                              num_labels=num_filters)
 
         num_target_classes = num_classes
         self.dense = nn.Linear(num_filters, num_filters // 2)
@@ -258,11 +253,10 @@ class calc_resnet(pl.LightningModule):
         self.last_train_loss = 0
 
     def forward(self, x):
-        self.feature_extractor.eval()
-        with torch.no_grad():
-            representations = self.feature_extractor(x).flatten(1)
         
-        x = self.dropout(representations)
+        outputs = self.vit(pixel_values=x, interpolate_pos_encoding=True).logits()
+        
+        x = self.dropout(outputs)
         x = self.dense(x)
         x = self.dropout(x)
         x = self.dense2(x)

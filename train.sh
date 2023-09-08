@@ -1,11 +1,7 @@
 #!/bin/bash
 
-python3 Testing/basic_newt_resnet/main.py -w true -b 32 -p 0.3
-python3 Testing/basic_newt_resnet/main.py -w true -b 32 -p 0.2
-python3 Testing/basic_newt_resnet/main.py -w true -b 32 -p 0.1
-python3 Testing/basic_newt_resnet/main.py -w true -b 16 -p 0.3
-python3 Testing/basic_newt_resnet/main.py -w true -b 16 -p 0.2
-python3 Testing/basic_newt_resnet/main.py -w true -b 16 -p 0.1
+python3 newt_baselines/main.py -g animal
+python3 newt_baselines/main.py -g nothing
 
 
 # training scripts for budapest

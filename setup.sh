@@ -19,7 +19,7 @@ apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 
 chmod +rwx ./train.sh
 
-# tar -xf archive.tar.gz -C dir
+# tar -xvf archive.tar.gz -C dir
 
 # install anaconda to install numpy
 # mkdir tmp

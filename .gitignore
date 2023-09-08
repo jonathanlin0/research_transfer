@@ -6,3 +6,4 @@ lightning_logs/*
 wandb/*
 datasets/cifar_10_data/cifar-10-python.tar.gz
 temp.ckpt
+newt_baselines/cache_photos/*
